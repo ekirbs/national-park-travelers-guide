@@ -37,15 +37,15 @@ function displayChosenCity() {
       .then(function (data) {
         console.log(data)
 
-var temperature = response.list[0].main.temp
+var temperature = data.list[0].main.temp
 
 console.log(temperature);
 
-var windSpeed = response.list[0].wind.speed;
+var windSpeed = data.list[0].wind.speed;
 
 console.log(windSpeed);
 
-var humidity = response.list[0].main.humidity;
+var humidity = data.list[0].main.humidity;
 
 console.log(humidity);
 
