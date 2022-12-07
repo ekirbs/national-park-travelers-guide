@@ -37,12 +37,7 @@ function getWeatherApi() {
 function getWeatherApi();
 
 
-// connect to the rover api and get carousel of pictures
-
-
 // document.addEventListener('DOMContentLoaded', function() {
 //     var elems = document.querySelectorAll('.carousel');
 //     var instances = M.Carousel.init(elems, options);
 //   });
-
-  
