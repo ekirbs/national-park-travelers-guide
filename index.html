@@ -8,6 +8,12 @@
   width: 100%
 }
 
+.temp {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px;
+}
+
 </style>
 
 <!DOCTYPE html>
@@ -17,9 +23,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mars Wireframe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
 
@@ -38,7 +44,64 @@
         <img id="title-photo" src="../travel-guide-to-mars/images/ACADIA 1.jpeg"></img>
     </figure>
 
-    <aside id="form">
+
+
+<section class="temp">
+    <div class="row">
+        <div class="col s7">
+          <div class="card">
+            <div class="card-image">
+              <img src="../travel-guide-to-mars/images/acadia.jpeg">
+              <span class="card-title">Temp</span>
+            </div>
+            <div class="card-content">
+              <p>Text</p>
+              </div>
+          </div>  
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s7">
+            <div class="card">
+              <div class="card-image">
+                <img src="../travel-guide-to-mars/images/yellowstone.webp">
+                <span class="card-title">Temp</span>
+              </div>
+              <div class="card-content">
+                <p>Text</p>
+                </div>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s7">
+            <div class="card">
+              <div class="card-image">
+                <img src="../travel-guide-to-mars/images/acadia.jpeg">
+                <span class="card-title">Temp</span>
+              </div>
+              <div class="card-content">
+                <p>Text</p>
+                </div>
+            </div>  
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s7">
+            <div class="card">
+              <div class="card-image">
+                <img src="../travel-guide-to-mars/images/acadia.jpeg">
+                <span class="card-title">Temp</span>
+              </div>
+              <div class="card-content">
+                <p>Text</p>
+                </div>
+            </div>  
+          </div>
+        </div>
+      </section>
+
+      <aside id="form">
         <div class="row">
             <form class="col s12">
               <div class="row">
@@ -75,53 +138,24 @@
                   <div class="input-field inline">
                     <input id="email_inline" type="email" class="validate">
                     <label for="email_inline">Code:</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                    <span class="helper-text" data-error="wrong" data-success="right">ACADIA: 1700</span>
                   </div>
                 </div>
             </div>
             <!-- <input id="search-input">Input</input> -->
-            <button class="waves-effect waves-light btn" id ="search-btn">SUBMIT</button>
+            <button id="acadia" class="waves-effect waves-light btn" id ="search-btn">ACADIA</button>
+            <button id="rockies" class="waves-effect waves-light btn" id ="search-btn">YELLOWSTONE</button>
+            <button id="'yellow" class="waves-effect waves-light btn" id ="search-btn">ROCKY MOUNTAIN</button>
+            <button id="grand" class="waves-effect waves-light btn" id ="search-btn">GRAND CANYON</button>
         </form>
           </div>
         </aside>
-
-<section class="temp">
-    <div class="row">
-        <div class="col s2">
-          <div class="card">
-            <div class="card-image">
-              <img src="../travel-guide-to-mars/images/acadia.jpeg">
-              <span class="card-title">Temp</span>
-            </div>
-            <div class="card-content">
-              <p>Text</p>
-              </div>
-          </div>  
-        </div>
-      </div>
-    </section>
-
-    <section class="temp">
-      <div class="row">
-          <div class="col s2">
-            <div class="card">
-              <div class="card-image">
-                <img src="../travel-guide-to-mars/images/acadia.jpeg">
-                <span class="card-title">Temp</span>
-              </div>
-              <div class="card-content">
-                <p>Text</p>
-                </div>
-            </div>  
-          </div>
-        </div>
-      </section>
   
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
 
 <script src="./assets/js/script.js"></script>
 </html>
