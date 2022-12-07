@@ -1,3 +1,10 @@
+<style>
+.stock-img {
+  height: 20px;
+  width: 20px;
+}
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,14 +21,14 @@
           <a href="#" class="brand-logo">WELCOME TO MARS!</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#form">Book your ticket</a></li>
-            <li><a href="###">Weather on Mars</a></li>
-            <li><a href="###">Pictures of Mars</a></li>
+            <li><a href="#temp">Weather on Mars</a></li>
+            <li><a href="#photos">Pictures of Mars</a></li>
             <li><a href="###">Recent NASA news</a></li>
           </ul>
         </div>
       </nav>
     <figure>
-        <img src="../images/Mars.webp"></img>
+        <img src="../travel-guide-to-mars/images/Mars.webp"></img>
     </figure>
 
     <aside id="form">
@@ -70,25 +77,39 @@
           </div>
         </aside>
 
-<section>
+<section id="temp">
     <div class="row">
         <div class="col s4">
           <div class="card">
             <div class="card-image">
-              <img src="../images/mars1.jpeg">
+              <img src="../travel-guide-to-mars/images/mars1.jpeg">
               <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
               </div>
-          </div>
+          </div>  
         </div>
       </div>
-    
     </section>
 
+    <!-- Weather goes here -->
+
+<section id="photos">
+    <ul class="pagination">
+      <li class="disabled"><a href="#!"><i class="material-icons">Left</i></a></li>
+      <li class="active"><img class="stock-img" src="../travel-guide-to-mars/images/img5.jpeg"></li>
+      <li class="waves-effect"><img class="stock-img" src="../travel-guide-to-mars/images/img1.jpeg"></li>
+      <li class="waves-effect"><img class="stock-img" src="../travel-guide-to-mars/images/img2.jpeg"></li>
+      <li class="waves-effect"><img class="stock-img" src="../travel-guide-to-mars/images/img3.jpeg"></li>
+      <li class="waves-effect"><img class="stock-img" src="../travel-guide-to-mars/images/img4.webp"></li>
+      <li class="waves-effect"><a href="#!"><i class="material-icons">Right</i></a></li>
+    </ul>
+  </section>
+  </body>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </html>
+
