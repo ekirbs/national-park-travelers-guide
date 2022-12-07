@@ -4,7 +4,7 @@ var weatherApiKey = "3044316f6126db93462603440b6cd43c";
 
 function getParkApi() {
   
-  var parkCode = 
+  // var parkCode = 
 
   var parkApiURL = `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${parkApiKey}`;
 
@@ -15,7 +15,7 @@ function getParkApi() {
       .then(function (data) {
         console.log(data)
 
-        var activities = response.
+        // var activities = response.
 
     });
 
