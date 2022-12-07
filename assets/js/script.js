@@ -2,19 +2,36 @@ console.log('for github');
 
 var apiKey = 'A9S3i3Pm3275PfUFD8eiisByBw83gq5GlQ20dgGu';
 
-var apiURL = `https://api.nasa.gov/insight_weather/?api_key=${apiKey}&feedtype=json&ver=1.0`;
 
 // connect to weather api and get weather for last 7 days
-getWeather();
 
-function getWeather() {
+function getApi() {
+  
+  var apiURL = `https://api.nasa.gov/insight_weather/?api_key=${apiKey}&feedtype=json&ver=1.0`;
+
   fetch(apiURL)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-};
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data)
+    });
+}
 
+getApi();
+
+// fetchButton.addEventListener('click', getApi);
+
+// function getWeather() {
+//   var apiURL = `https://api.nasa.gov/insight_weather/?api_key=${apiKey}&feedtype=json&ver=1.0`;
+//   fetch(apiURL)
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//   })
+// };
+
+// getWeather();
 
 // function marsWeather() {
 
