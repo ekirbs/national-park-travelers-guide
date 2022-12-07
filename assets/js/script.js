@@ -2,7 +2,63 @@ console.log('for github');
 
 var apiKey = 'A9S3i3Pm3275PfUFD8eiisByBw83gq5GlQ20dgGu';
 
-// var apiURL = `https://api.nasa.gov/insight_weather/?api_key=${API_KEY}&feedtype=json&ver=1.0`;
+var apiURL = `https://api.nasa.gov/insight_weather/?api_key=${apiKey}&feedtype=json&ver=1.0`;
+
+// connect to weather api and get weather for last 7 days
+getWeather();
+
+function getWeather() {
+  fetch(apiURL)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+};
+
+
+// function marsWeather() {
+
+//   $.ajax({
+//     url: apiURL,
+//     method: "GET",
+//   })
+
+//   .then(function (response) {
+//     console.log(response)
+//   })
+
+    // var temperature = response.list[0].main.temp
+
+    // console.log(temperature);
+
+    // var windSpeed = response.list[0].wind.speed;
+
+    // console.log(windSpeed);
+
+    // var humidity = response.list[0].main.humidity;
+
+    // console.log(humidity);  
+
+// }
+
+// $(document).on("click", "#search-btn", marsWeather);
+
+
+// connect to the rover api and get carousel of pictures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function getWeather() {
 //   fetch(apiURL)
@@ -38,10 +94,10 @@ var apiKey = 'A9S3i3Pm3275PfUFD8eiisByBw83gq5GlQ20dgGu';
 
 // function getWeather (event) {
 //   event.preventDefault();
-//   // var cityName = $("#search-input").val().trim();
+//   var cityName = $("#search-input").val().trim();
 //   var apiURL = `https://api.nasa.gov/insight_weather/?api_key=${apiKey}&feedtype=json&ver=1.0`;
 
-//   // console.log(`You have searched for this city: ${cityName}`);
+//   console.log(`You have searched for this city: ${cityName}`);
 //   $.ajax({
 //     url: apiURL,
 //     method: "GET",
@@ -49,18 +105,17 @@ var apiKey = 'A9S3i3Pm3275PfUFD8eiisByBw83gq5GlQ20dgGu';
 
 //   .then(function (response) {
 //     console.log(response)
-//     // var temperature = response.list[0].main.temp
-//     // // var temperature = response.main.temp;
+//     var temperature = response.list[0].main.temp
 
-//     // console.log(temperature);
+//     console.log(temperature);
 
-//     // var windSpeed = response.list[0].wind.speed;
+//     var windSpeed = response.list[0].wind.speed;
 
-//     // console.log(windSpeed);
+//     console.log(windSpeed);
 
-//     // var humidity = response.list[0].main.humidity;
+//     var humidity = response.list[0].main.humidity;
 
-//     // console.log(humidity);
+//     console.log(humidity);
 //   });
 
 // }
@@ -79,7 +134,9 @@ var apiKey = 'A9S3i3Pm3275PfUFD8eiisByBw83gq5GlQ20dgGu';
 
 //   cities.push(cityName);
 
-//   // renderCards();
+//   renderCards();
 // });
 
-// $(document).on("click", "#search-btn", displayChosenCity);
+// $(document).on("click", "#search-btn", getWeather);
+
+// getWeather();
