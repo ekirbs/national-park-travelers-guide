@@ -89,7 +89,8 @@ function displayChosenPark() {
         console.log(data)
 
         // var activities = response.activities;
-        
+        $("#park-info").empty();
+
         var featureCard = $("<div>");
 
         var description = data.data[0].description;
@@ -130,7 +131,10 @@ function displayChosenPark() {
 
 function displayChosenCity() {
   
-  var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${weatherApiKey}`;
+var units = "imperial";
+var lang = 'en';
+
+  var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${weatherApiKey}&units=${units}&lang=${lang}`;
 
   fetch(weatherApiURL)
     .then(function (response) {
@@ -139,9 +143,15 @@ function displayChosenCity() {
       .then(function (data) {
         console.log(data)
 
-      var temperature = data.list[0].main.temp
+        $("#weather").empty();
+        
+        var featureCard = $("<div>");
 
-      console.log(temperature);
+      var temperature = data.list[0].main.temp
+      // var tempToF = ((temperature - 273.15) * 9/5 + 32).toFixed();
+      
+
+      console.log((temperature - 273.15) * 9/5 + 32);
 
       var windSpeed = data.list[0].wind.speed;
 
@@ -150,6 +160,13 @@ function displayChosenCity() {
       var humidity = data.list[0].main.humidity;
 
       console.log(humidity + '%');
+
+      featureCard.append("<br/>" + temperature + " degrees F");
+      featureCard.append("<br/>" + windSpeed + " mph");
+      featureCard.append("<br/>" + humidity + "% humidity");
+
+      $("#weather").append(featureCard);
+
 
 });
 
