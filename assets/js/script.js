@@ -1,6 +1,76 @@
+
+
+//Alternative 
+// const weatherApiKey = "3044316f6126db93462603440b6cd43c"
+// fetch(``)
+// .then((response) => {
+//     return response.json()
+// })
+// .then((data) => {
+//     console.log(data)
+//     openWeatherFetch(data[0].lat, data[0].lon)
+// })
+// function openWeatherFetch(lat, lon) {
+//     fetch(``)
+//     .then((response) => {
+//         return response.json()
+//     })
+//     .then((data) => {
+//         console.log(data)
+//     })
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var parkApiKey = 'amkrsfXuAU5bolqQY0bTMOV4h2mBIOTqrRvrJVsd';
 
 var weatherApiKey = "3044316f6126db93462603440b6cd43c";
+
+
+var parks = [
+  {
+    parkName: 'Yellowstone',
+    parkCode: "YELL",
+  },
+  {
+    parkName: 'Acadia',
+    parkCode: 'ACAD',
+  },
+  {
+    parkName: 'The Grand Canyon',
+    parkCode: 'GLCA'
+  },
+  {
+    
+  }
+
+]
+// var selectEl;
+// for(var i = 0; i<parks.length; i++) {
+//   var optionEl = document.createElement('option');
+//   var optionId = parks[i].parkCode;
+//   optionEl.setAttribute('id', optionId);
+//   optionEl.textContent = parks[i].parkName;
+//   selectEl.appendChild(optionEl);
+// }
 
 var park;
 var city;
@@ -20,6 +90,9 @@ function displayChosenPark() {
 
         // var activities = response.activities;
 
+        var description = data.data[0].description;
+        console.log(description);
+
     });
 
 }
@@ -37,17 +110,17 @@ function displayChosenCity() {
       .then(function (data) {
         console.log(data)
 
-var temperature = data.list[0].main.temp
+      var temperature = data.list[0].main.temp
 
-console.log(temperature);
+      console.log(temperature);
 
-var windSpeed = data.list[0].wind.speed;
+      var windSpeed = data.list[0].wind.speed;
 
-console.log(windSpeed);
+      console.log(windSpeed);
 
-var humidity = data.list[0].main.humidity;
+      var humidity = data.list[0].main.humidity;
 
-console.log(humidity);
+      console.log(humidity + '%');
 
 });
 
@@ -63,7 +136,11 @@ $("#acadia").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
+  let div = document.createElement("div")
+  let p = document.createElement("p")
+  div.append("Some text", p)
 
+console.log(div.childNodes) // NodeList [ #text "Some text", <p>
   // cities.push(cityName);
 
   // renderCards();
