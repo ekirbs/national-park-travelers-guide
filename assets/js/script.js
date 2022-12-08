@@ -89,18 +89,25 @@ function displayChosenPark() {
         console.log(data)
 
         // var activities = response.activities;
+        $("#park-info").empty();
+
+        var featureCard = $("<div>");
 
         var description = data.data[0].description;
         console.log(description);
+        
 
         var streetName = data.data[0].addresses[0].line1;
         var city = data.data[0].addresses[0].city;
         var zip = data.data[0].addresses[0].postalCode;
         var state = data.data[0].addresses[0].stateCode;
         console.log(streetName + ' ' + city + ' ,' + zip + ' ,' + state);
+        
+
 
         var directions = data.data[0].directionsInfo;
         console.log(directions);
+        
 
         // var activities = data.data[0].activities[0].name;
         // console.log(activities);
@@ -108,6 +115,12 @@ function displayChosenPark() {
         var hours = data.data[0].operatingHours[0].standardHours;
         console.log(hours);
 
+        featureCard.append("<br/>" + description);
+        featureCard.append("<br/>" + streetName + ' ' + city + ' ,' + zip + ' ,' + state);
+        featureCard.append("<br/>" + directions);
+        featureCard.append("<br/>" + hours);
+
+        $("#park-info").append(featureCard);
         
 
     });
@@ -118,7 +131,10 @@ function displayChosenPark() {
 
 function displayChosenCity() {
   
-  var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${weatherApiKey}`;
+var units = "imperial";
+var lang = 'en';
+
+  var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${weatherApiKey}&units=${units}&lang=${lang}`;
 
   fetch(weatherApiURL)
     .then(function (response) {
@@ -127,9 +143,15 @@ function displayChosenCity() {
       .then(function (data) {
         console.log(data)
 
-      var temperature = data.list[0].main.temp
+        $("#weather").empty();
+        
+        var featureCard = $("<div>");
 
-      console.log(temperature);
+      var temperature = data.list[0].main.temp
+      // var tempToF = ((temperature - 273.15) * 9/5 + 32).toFixed();
+      
+
+      console.log((temperature - 273.15) * 9/5 + 32);
 
       var windSpeed = data.list[0].wind.speed;
 
@@ -138,6 +160,13 @@ function displayChosenCity() {
       var humidity = data.list[0].main.humidity;
 
       console.log(humidity + '%');
+
+      featureCard.append("<br/>" + temperature + " degrees F");
+      featureCard.append("<br/>" + windSpeed + " mph");
+      featureCard.append("<br/>" + humidity + "% humidity");
+
+      $("#weather").append(featureCard);
+
 
 });
 
