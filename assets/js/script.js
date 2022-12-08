@@ -79,17 +79,17 @@ function displayChosenCity() {
       .then(function (data) {
         console.log(data)
 
-var temperature = data.list[0].main.temp
+      var temperature = data.list[0].main.temp
 
-console.log(temperature);
+      console.log(temperature);
 
-var windSpeed = data.list[0].wind.speed;
+      var windSpeed = data.list[0].wind.speed;
 
-console.log(windSpeed);
+      console.log(windSpeed);
 
-var humidity = data.list[0].main.humidity;
+      var humidity = data.list[0].main.humidity;
 
-console.log(humidity);
+      console.log(humidity + '%');
 
 });
 
@@ -105,7 +105,11 @@ $("#acadia").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
+  let div = document.createElement("div")
+  let p = document.createElement("p")
+  div.append("Some text", p)
 
+console.log(div.childNodes) // NodeList [ #text "Some text", <p>
   // cities.push(cityName);
 
   // renderCards();
