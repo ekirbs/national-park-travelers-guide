@@ -93,6 +93,23 @@ function displayChosenPark() {
         var description = data.data[0].description;
         console.log(description);
 
+        var streetName = data.data[0].addresses[0].line1;
+        var city = data.data[0].addresses[0].city;
+        var zip = data.data[0].addresses[0].postalCode;
+        var state = data.data[0].addresses[0].stateCode;
+        console.log(streetName + ' ' + city + ' ,' + zip + ' ,' + state);
+
+        var directions = data.data[0].directionsInfo;
+        console.log(directions);
+
+        // var activities = data.data[0].activities[0].name;
+        // console.log(activities);
+
+        var hours = data.data[0].operatingHours[0].standardHours;
+        console.log(hours);
+
+        
+
     });
 
 }
@@ -195,6 +212,15 @@ $("#rockies").on("click", function (event) {
 });
 
 
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.dropdown-trigger');
+//   var instances = M.Dropdown.init(elems, options);
+// });
+
+// Or with jQuery
+
+$('.dropdown-trigger').dropdown();
 
 // function getWeatherApi();
 
