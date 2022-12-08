@@ -44,6 +44,27 @@ var parkApiKey = 'amkrsfXuAU5bolqQY0bTMOV4h2mBIOTqrRvrJVsd';
 
 var weatherApiKey = "3044316f6126db93462603440b6cd43c";
 
+
+var parks = [
+  {
+    parkName: 'Yellowstone',
+    parkCode: "YELL",
+  },
+  {
+    parkName: 'Acadia',
+    parkCode: 'ACAD',
+  },
+
+]
+// var selectEl;
+// for(var i = 0; i<parks.length; i++) {
+//   var optionEl = document.createElement('option');
+//   var optionId = parks[i].parkCode;
+//   optionEl.setAttribute('id', optionId);
+//   optionEl.textContent = parks[i].parkName;
+//   selectEl.appendChild(optionEl);
+// }
+
 var park;
 var city;
 
@@ -61,6 +82,9 @@ function displayChosenPark() {
         console.log(data)
 
         // var activities = response.activities;
+
+        var description = data.data[0].description;
+        console.log(description);
 
     });
 
