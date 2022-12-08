@@ -89,18 +89,24 @@ function displayChosenPark() {
         console.log(data)
 
         // var activities = response.activities;
+        
+        var featureCard = $("<div>");
 
         var description = data.data[0].description;
         console.log(description);
+        
 
         var streetName = data.data[0].addresses[0].line1;
         var city = data.data[0].addresses[0].city;
         var zip = data.data[0].addresses[0].postalCode;
         var state = data.data[0].addresses[0].stateCode;
         console.log(streetName + ' ' + city + ' ,' + zip + ' ,' + state);
+        
+
 
         var directions = data.data[0].directionsInfo;
         console.log(directions);
+        
 
         // var activities = data.data[0].activities[0].name;
         // console.log(activities);
@@ -108,6 +114,12 @@ function displayChosenPark() {
         var hours = data.data[0].operatingHours[0].standardHours;
         console.log(hours);
 
+        featureCard.append("<br/>" + description);
+        featureCard.append("<br/>" + streetName + ' ' + city + ' ,' + zip + ' ,' + state);
+        featureCard.append("<br/>" + directions);
+        featureCard.append("<br/>" + hours);
+
+        $("#park-info").append(featureCard);
         
 
     });
