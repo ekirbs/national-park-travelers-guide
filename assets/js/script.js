@@ -54,6 +54,13 @@ var parks = [
     parkName: 'Acadia',
     parkCode: 'ACAD',
   },
+  {
+    parkName: 'The Grand Canyon',
+    parkCode: 'GLCA'
+  },
+  {
+    
+  }
 
 ]
 // var selectEl;
