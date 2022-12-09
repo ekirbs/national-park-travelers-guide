@@ -115,7 +115,7 @@ function displayChosenPark() {
 
 
       featureCard.append("<br/>" + 'Park Hours' + '<br/>'
-        + "Friday: " + hours.sunday + "<br/>"
+        + "Sunday: " + hours.sunday + "<br/>"
         + "Monday: " + hours.monday + "<br/>"
         + "Tuesday: " + hours.tuesday + "<br/>"
         + "Wednesday: " + hours.wednesday + "<br/>"
@@ -127,30 +127,32 @@ function displayChosenPark() {
 
       $("#park-info").append(featureCard);
 
-      var images = data.data[0].images;
-      console.log(images);
-      var imagesLength = images.length;
+      // var images = data.data[0].images;
+      // console.log(images);
+      // var imagesLength = images.length;
+      // console.log(images.length);
 
-      for (var i = 0; i < images.length; i++) {
-        var slideContainer = $('<div class="mySlides fade">')
+      // for (var i = 0; i < images.length; i++) {
+      //   var slideContainer = $('<div class="mySlides fade">')
 
-        var numberDiv = $('<div class="numbertext">').text(`${i + 1}/${imagesLength}`);
-        slideContainer.append(numberDiv);
+      //   var numberDiv = $('<div class="numbertext">').text(`${i + 1}/${imagesLength}`);
+      //   slideContainer.append(numberDiv);
 
-        var img = data.data[0].images[i];
-        var img = $('<img src="data.data[0].images[i]">')  // how to source the images from the data?
-        slideContainer.append(img);
+      //   var imgSrc = data.data[0].images[i].url;
+      //   var img = $('<img>').src(`${imgSrc}`);
+      //   // var img = $('<img src="data.data[0].images[i]">')  // how to source the images from the data?
+      //   slideContainer.append(img);
 
-        var capName = data.data[0].images.name;
-        var textDiv = $('<div class="text">').text(`${capName}`);
-        slideContainer.append(textDiv);
+      //   var capName = data.data[0].images[i].name;
+      //   var textDiv = $('<div class="text">').text(`${capName}`);
+      //   slideContainer.append(textDiv);
 
-        $('slideshowContainer').append(slideContainer);
+      //   $('.slideshow-container').append(slideContainer);
 
-        var dotSpan = $('<span class="dot" onclick="currentSlide[i + 1]">')
-        $('#dotContainer').append(dotSpan);
+        // var dotSpan = $('<span class="dot" onclick="currentSlide[i + 1]">')
+        // $('#dotContainer').append(dotSpan);
 
-      }
+      // }
 
 
     });
