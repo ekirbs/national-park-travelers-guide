@@ -19,7 +19,7 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">National Park Traveller's Guide!</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="#parksDropdown">National Parks</a></li>
+          <li><a href="#park-info">National Parks</a></li>
           <li><a href="#weather">Weather at Parks</a></li>
           <li><a href="#news">Recent Park News</a></li>
         </ul>
@@ -31,27 +31,69 @@
 
     <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
-      <div class="numbertext">1 / 5</div>
-      <img src="./assets/images/acad-2.jpeg" style="width:100%">
+      <div class="numbertext">1 / 11</div>
+      <img src="./assets/images/acad-2.jpeg">
       <div class="text">ACADIA</div>
     </div>
 
     <div class="mySlides fade">
-      <div class="numbertext">2 / 5</div>
-      <img src="./assets/images/glca-1.webp" style="width:100%">
+      <div class="numbertext">2 / 11</div>
+      <img src="./assets/images/arches-1.jpeg">
+      <div class="text">ARCHES</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 11</div>
+      <img src="./assets/images/glca-1.webp">
       <div class="text">GRAND CANYON</div>
     </div>
 
     <div class="mySlides fade">
-      <div class="numbertext">3 / 5</div>
-      <img src="./assets/images/romo-1.jpeg" style="width:100%">
+      <div class="numbertext">4 / 11</div>
+      <img src="./assets/images/romo-1.jpeg">
       <div class="text">ROCKY MOUNTAIN</div>
     </div>
 
     <div class="mySlides fade">
-      <div class="numbertext">4 / 5</div>
-      <img src="./assets/images/yell-1.webp" style="width:100%">
+      <div class="numbertext">5 / 11</div>
+      <img src="./assets/images/yell-1.webp">
       <div class="text">YELLOWSTONE</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">6 / 11</div>
+      <img src="./assets/images/glac-1.webp">
+      <div class="text">GLACIER</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">7 / 11</div>
+      <img src="./assets/images/yose-1.webp">
+      <div class="text">YOSEMITE</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">8 / 11</div>
+      <img src="./assets/images/seki-1.webp">
+      <div class="text">SEQUIOA</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">9 / 11</div>
+      <img src="./assets/images/redw-1.webp">
+      <div class="text">REDWOOD</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">10 / 11</div>
+      <img src="./assets/images/ever-1.webp">
+      <div class="text">EVERGLADE</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">11 / 11</div>
+      <img src="./assets/images/dena-1.webp">
+      <div class="text">DENALI</div>
     </div>
 
     <!-- Next and previous buttons -->
@@ -65,12 +107,20 @@
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+    <span class="dot" onclick="currentSlide(9)"></span>
+    <span class="dot" onclick="currentSlide(10)"></span>
+    <span class="dot" onclick="currentSlide(11)"></span>
   </div>
 
 
   <div class="row">
     <div class="col s4">
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+      <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 
       <!-- Dropdown Structure -->
       <ul id='dropdown1' class='dropdown-content'>
@@ -79,14 +129,20 @@
         <li id="grand"><a>Grand Canyon</a></li>
         <li id="rockies"><a>Rocky Mountain</a></li>
         <li id="yellow"><a>Yellstone</a></li>
-        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        <li id="glac"><a>Glacier</a></li>
+        <li id="yose"><a>Yosemite</a></li>
+        <li id="seki"><a>Sequioa</a></li>
+        <li id="redw"><a>Redwood</a></li>
+        <li id="ever"><a>Everglade</a></li>
+        <li id="dena"><a>Denali</a></li>
+        
+        <!-- <li id="glac"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+        <li id="yose"><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
       </ul>
     </div>
 
     <div class="container col s8">
       <div id="park-info">
-        <p>Hello</p>
       </div>
     </div>
   </div>
@@ -101,7 +157,6 @@
 
     <div class="container col s8">
       <div id="weather"></div>
-      <p>Hello</p>
     </div>
   </div>
 
