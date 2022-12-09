@@ -98,6 +98,9 @@ function displayChosenPark() {
         var directions = data.data[0].directionsInfo;
         console.log(directions);
         
+        var directionsUrl = data.data[0].directionsUrl;
+        console.log(directionsUrl);
+        
 
         // var activities = data.data[0].activities[0].name;
         // console.log(activities);
@@ -105,10 +108,15 @@ function displayChosenPark() {
         var hours = data.data[0].operatingHours[0].standardHours;
         console.log(hours);
 
-        featureCard.append("<br/>" + description);
-        featureCard.append("<br/>" + streetName + ' ' + city + ' ,' + zip + ' ,' + state);
-        featureCard.append("<br/>" + directions);
-        featureCard.append("<br/>" + hours);
+        featureCard.append("<br/>" + 'Park Description' + '<br/>' +description + "<br/>");
+        featureCard.append("<br/>" + 'Park Address'+ '<br/>' + streetName + ' ' + city + ' ,' + zip + ' ,' + state + "<br/>");
+        featureCard.append("<br/>" + 'Park Direction'+ '<br/>' + directions + "<br/>");
+        featureCard.append("<br/>"+  'Park Direction URL'+ '<br/>' +directionsUrl + "<br/>");
+        
+        $('hours').each(function(){
+        featureCard.append("<br/>" + 'Park Hours'+ '<br/>' +hours[i] + "<br/>");
+      })
+
 
         $("#park-info").append(featureCard);
         
