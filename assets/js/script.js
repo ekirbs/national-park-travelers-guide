@@ -232,6 +232,120 @@ $("#rockies").on("click", function (event) {
 
 
 
+$("#arches").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "ARCH";
+  city = "Moab,Utah";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+
+$("#glacier").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "GLAC";
+  city = "Columbia Falls, Montana";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#yosemite").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "YOSE";
+  city = "Mariposa, California";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#sequoia").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "SEKI";
+  city = "Visalia,California";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#redwood").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "REDW";
+  city = "Crescent City, California";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#everglades").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "EVER";
+  city = "Everglades City, Florida";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#denali").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "DENA";
+  city = "Healy, Alaska";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+
 // document.addEventListener('DOMContentLoaded', function() {
 //   var elems = document.querySelectorAll('.dropdown-trigger');
 //   var instances = M.Dropdown.init(elems, options);
