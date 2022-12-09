@@ -26,31 +26,31 @@ var parks = [
   },
   {
     parkName: 'Glacier',
-    parkCode:'GLAC'
+    parkCode: 'GLAC'
   },
   {
-    parkName:'Yosemite',
-    parkCode:'YOSE'
+    parkName: 'Yosemite',
+    parkCode: 'YOSE'
   },
   {
-    parkName:'Sequoia',
-  parkCode:'SEKI'
+    parkName: 'Sequoia',
+    parkCode: 'SEKI'
   },
 
   {
-    parkName:'Redwood',
-    parkCode:'REDW'
+    parkName: 'Redwood',
+    parkCode: 'REDW'
 
   },
-{
-  parkName: 'Everglade',
-  parkcode: 'EVER'
-},
+  {
+    parkName: 'Everglade',
+    parkcode: 'EVER'
+  },
 
-{
-  parkName: 'Denali',
-  parkCode: 'DENA'
-},
+  {
+    parkName: 'Denali',
+    parkCode: 'DENA'
+  },
 
 ]
 // var selectEl;
@@ -66,7 +66,7 @@ var park;
 var city;
 
 function displayChosenPark() {
-  
+
   // var parkCode = 'ACAD';
 
   var parkApiURL = `https://developer.nps.gov/api/v1/parks?parkCode=${park}&api_key=${parkApiKey}`;
@@ -75,51 +75,58 @@ function displayChosenPark() {
     .then(function (response) {
       return response.json();
     })
-      .then(function (data) {
-        console.log(data)
+    .then(function (data) {
+      console.log(data)
 
-        // var activities = response.activities;
-        $("#park-info").empty();
+      // var activities = response.activities;
+      $("#park-info").empty();
 
-        var featureCard = $("<div>");
+      var featureCard = $("<div>");
 
-        var description = data.data[0].description;
-        console.log(description);
-        
-
-        var streetName = data.data[0].addresses[0].line1;
-        var city = data.data[0].addresses[0].city;
-        var zip = data.data[0].addresses[0].postalCode;
-        var state = data.data[0].addresses[0].stateCode;
-        console.log(streetName + ' ' + city + ' ,' + zip + ' ,' + state);
-        
+      var description = data.data[0].description;
+      console.log(description);
 
 
-        var directions = data.data[0].directionsInfo;
-        console.log(directions);
-        
-        var directionsUrl = data.data[0].directionsUrl;
-        console.log(directionsUrl);
-        
-
-        // var activities = data.data[0].activities[0].name;
-        // console.log(activities);
-
-        var hours = data.data[0].operatingHours[0].standardHours;
-        console.log(hours);
-
-        featureCard.append("<br/>" + 'Park Description' + '<br/>' +description + "<br/>");
-        featureCard.append("<br/>" + 'Park Address'+ '<br/>' + streetName + ' ' + city + ' ,' + zip + ' ,' + state + "<br/>");
-        featureCard.append("<br/>" + 'Park Direction'+ '<br/>' + directions + "<br/>");
-        featureCard.append("<br/>"+  'Park Direction URL'+ '<br/>' +directionsUrl + "<br/>");
-        
-        $('hours').each(function(){
-        featureCard.append("<br/>" + 'Park Hours'+ '<br/>' +hours[i] + "<br/>");
-      })
+      var streetName = data.data[0].addresses[0].line1;
+      var city = data.data[0].addresses[0].city;
+      var zip = data.data[0].addresses[0].postalCode;
+      var state = data.data[0].addresses[0].stateCode;
+      console.log(streetName + ' ' + city + ' ,' + zip + ' ,' + state);
 
 
-        $("#park-info").append(featureCard);
-        
+
+      var directions = data.data[0].directionsInfo;
+      console.log(directions);
+
+      var directionsUrl = data.data[0].directionsUrl;
+      console.log(directionsUrl);
+
+
+      // var activities = data.data[0].activities[0].name;
+      // console.log(activities);
+
+      var hours = data.data[0].operatingHours[0].standardHours;
+      console.log(hours);
+
+      featureCard.append("<br/>" + 'Park Description' + '<br/>' + description + "<br/>");
+      featureCard.append("<br/>" + 'Park Address' + '<br/>' + streetName + ' ' + city + ' ,' + zip + ' ,' + state + "<br/>");
+      featureCard.append("<br/>" + 'Park Direction' + '<br/>' + directions + "<br/>");
+      featureCard.append("<br/>" + 'Park Direction URL' + '<br/>' + directionsUrl + "<br/>");
+
+
+      featureCard.append("<br/>" + 'Park Hours' + '<br/>'
+        + "Friday: " + hours.sunday + "<br/>"
+        + "Monday: " + hours.monday + "<br/>"
+        + "Tuesday: " + hours.tuesday + "<br/>"
+        + "Wednesday: " + hours.wednesday + "<br/>"
+        + "Thursday: " + hours.thursday + "<br/>"
+        + "Friday: " + hours.friday + "<br/>"
+        + "Saturday: " + hours.saturday + "<br/>")
+
+
+
+      $("#park-info").append(featureCard);
+
 
     });
 
@@ -128,9 +135,9 @@ function displayChosenPark() {
 // getParkApi();
 
 function displayChosenCity() {
-  
-var units = "imperial";
-var lang = 'en';
+
+  var units = "imperial";
+  var lang = 'en';
 
   var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${weatherApiKey}&units=${units}&lang=${lang}`;
 
@@ -138,18 +145,18 @@ var lang = 'en';
     .then(function (response) {
       return response.json();
     })
-      .then(function (data) {
-        console.log(data)
+    .then(function (data) {
+      console.log(data)
 
-        $("#weather").empty();
-        
-        var featureCard = $("<div>");
+      $("#weather").empty();
+
+      var featureCard = $("<div>");
 
       var temperature = data.list[0].main.temp
       // var tempToF = ((temperature - 273.15) * 9/5 + 32).toFixed();
-      
 
-      console.log((temperature - 273.15) * 9/5 + 32);
+
+      console.log((temperature - 273.15) * 9 / 5 + 32);
 
       var windSpeed = data.list[0].wind.speed;
 
@@ -166,7 +173,7 @@ var lang = 'en';
       $("#weather").append(featureCard);
 
 
-});
+    });
 
 }
 
@@ -184,7 +191,7 @@ $("#acadia").on("click", function (event) {
   let p = document.createElement("p")
   div.append("Some text", p)
 
-console.log(div.childNodes) // NodeList [ #text "Some text", <p>
+  console.log(div.childNodes) // NodeList [ #text "Some text", <p>
   // cities.push(cityName);
 
   // renderCards();
@@ -377,16 +384,16 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
 
