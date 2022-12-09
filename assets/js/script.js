@@ -1,45 +1,3 @@
-
-
-//Alternative 
-// const weatherApiKey = "3044316f6126db93462603440b6cd43c"
-// fetch(``)
-// .then((response) => {
-//     return response.json()
-// })
-// .then((data) => {
-//     console.log(data)
-//     openWeatherFetch(data[0].lat, data[0].lon)
-// })
-// function openWeatherFetch(lat, lon) {
-//     fetch(``)
-//     .then((response) => {
-//         return response.json()
-//     })
-//     .then((data) => {
-//         console.log(data)
-//     })
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var parkApiKey = 'amkrsfXuAU5bolqQY0bTMOV4h2mBIOTqrRvrJVsd';
 
 var weatherApiKey = "3044316f6126db93462603440b6cd43c";
@@ -59,7 +17,8 @@ var parks = [
     parkCode: 'GLCA'
   },
   {
-    
+    parkName: 'Rocky Mountain',
+    parkCode: 'ROMO'
   }
 
 ]
