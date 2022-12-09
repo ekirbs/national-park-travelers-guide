@@ -202,7 +202,7 @@ function displayChosenCity() {
 
 }
 
-$("#acadia").on("click", function (event) {
+$("#acad").on("click", function (event) {
   event.preventDefault();
   console.log("button is working");
 
@@ -222,57 +222,7 @@ $("#acadia").on("click", function (event) {
   // renderCards();
 });
 
-$("#yellow").on("click", function (event) {
-  event.preventDefault();
-  console.log("button is working");
-
-  park = "YELL";
-  city = "Gardiner, Montana";
-
-  displayChosenPark();
-  displayChosenCity();
-
-
-  // cities.push(cityName);
-
-  // renderCards();
-});
-
-$("#grand").on("click", function (event) {
-  event.preventDefault();
-  console.log("button is working");
-
-  park = "GLCA";
-  city = "Tusayan, Arizona";
-
-  displayChosenPark();
-  displayChosenCity();
-
-
-  // cities.push(cityName);
-
-  // renderCards();
-});
-
-$("#rockies").on("click", function (event) {
-  event.preventDefault();
-  console.log("button is working");
-
-  park = "ROMO";
-  city = "Denver, Colorado";
-
-  displayChosenPark();
-  displayChosenCity();
-
-
-  // cities.push(cityName);
-
-  // renderCards();
-});
-
-
-
-$("#arches").on("click", function (event) {
+$("#arch").on("click", function (event) {
   event.preventDefault();
   console.log("button is working");
 
@@ -288,13 +238,12 @@ $("#arches").on("click", function (event) {
   // renderCards();
 });
 
-
-$("#glacier").on("click", function (event) {
+$("#dena").on("click", function (event) {
   event.preventDefault();
   console.log("button is working");
 
-  park = "GLAC";
-  city = "Columbia Falls, Montana";
+  park = "DENA";
+  city = "Healy, Alaska";
 
   displayChosenPark();
   displayChosenCity();
@@ -305,55 +254,7 @@ $("#glacier").on("click", function (event) {
   // renderCards();
 });
 
-$("#yosemite").on("click", function (event) {
-  event.preventDefault();
-  console.log("button is working");
-
-  park = "YOSE";
-  city = "Mariposa, California";
-
-  displayChosenPark();
-  displayChosenCity();
-
-
-  // cities.push(cityName);
-
-  // renderCards();
-});
-
-$("#sequoia").on("click", function (event) {
-  event.preventDefault();
-  console.log("button is working");
-
-  park = "SEKI";
-  city = "Visalia,California";
-
-  displayChosenPark();
-  displayChosenCity();
-
-
-  // cities.push(cityName);
-
-  // renderCards();
-});
-
-$("#redwood").on("click", function (event) {
-  event.preventDefault();
-  console.log("button is working");
-
-  park = "REDW";
-  city = "Crescent City, California";
-
-  displayChosenPark();
-  displayChosenCity();
-
-
-  // cities.push(cityName);
-
-  // renderCards();
-});
-
-$("#everglades").on("click", function (event) {
+$("#ever").on("click", function (event) {
   event.preventDefault();
   console.log("button is working");
 
@@ -369,12 +270,12 @@ $("#everglades").on("click", function (event) {
   // renderCards();
 });
 
-$("#denali").on("click", function (event) {
+$("#glac").on("click", function (event) {
   event.preventDefault();
   console.log("button is working");
 
-  park = "DENA";
-  city = "Healy, Alaska";
+  park = "GLAC";
+  city = "Columbia Falls, Montana";
 
   displayChosenPark();
   displayChosenCity();
@@ -384,6 +285,109 @@ $("#denali").on("click", function (event) {
 
   // renderCards();
 });
+
+$("#glca").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "GLCA";
+  city = "Tusayan, Arizona";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#redw").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "REDW";
+  city = "Crescent City, California";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#romo").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "ROMO";
+  city = "Denver, Colorado";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#seki").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "SEKI";
+  city = "Visalia,California";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+
+
+$("#yell").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "YELL";
+  city = "Gardiner, Montana";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+$("#yose").on("click", function (event) {
+  event.preventDefault();
+  console.log("button is working");
+
+  park = "YOSE";
+  city = "Mariposa, California";
+
+  displayChosenPark();
+  displayChosenCity();
+
+
+  // cities.push(cityName);
+
+  // renderCards();
+});
+
+
+
+
+
 
 
 // document.addEventListener('DOMContentLoaded', function() {
