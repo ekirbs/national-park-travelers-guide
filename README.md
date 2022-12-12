@@ -21,7 +21,7 @@ N/A
 
 ## Usage
 
-The app interface is simple.  ON the left-hand side, there is a dropdown box. Click the national park you want to explore.  The parks are organized by state.  ONce a park is chosen, information about the park will appear including:
+The app interface is simple.  On the left-hand side, there is a dropdown box. Click the national park you want to explore.  The parks are organized by state.  Once a park is chosen, information about the park will appear including:
 
 Also the current weather and five-day forecast will be displayed.
 

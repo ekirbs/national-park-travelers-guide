@@ -33,6 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* text-align: center; */
   }
   
   header h1 {
@@ -55,7 +56,13 @@
   
   /* || NAVIGATION BAR */
   
-
+  /* .nav-wrapper h1 {
+    display: inline-block;
+    font-size: 48px;
+    text-decoration: underline var(--yellow-highlight);
+    margin-left: 20px;
+  } */
+  
   .navbar {
     position: fixed;
     bottom: 0;
@@ -131,6 +138,14 @@
     display: block;
   }
   
+  /* || BACKGROUND IMAGE */
+  
+  /* figure img {
+    min-height: 100px;
+    height: auto;
+    width: 100%;
+  } */
+  
   /* || MAIN CONTENT - GENERAL */
   
   .main-content {
@@ -161,7 +176,24 @@
     text-decoration: underline var(--yellow-highlight);
   }
   
+  /* || ABOUT ME SECTION */
+  
+  /* .about-me-section p {
+    color: var(--dark-highlight);
+  }
+  
+  .name {
+    font-size: 1.25em;
+    background: linear-gradient(red, orange);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-decoration: underline var(--yellow-highlight);
+  } */
+  
   /* || PROJECTS SECTION */
+
+
 
   #park-weather-card, #activity-card, #park-hours-card,  #contact-park, #park-directions-card,  #park-description-card, #park-name {
     padding: 5%;
@@ -181,8 +213,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.5em;
     grid-template-areas:
-      "main main alt"
-      "alt alt alt";
+      "main alt alt"
+      "main alt alt";
   }
   
   .card {
@@ -260,6 +292,14 @@
   
   @media screen and (max-width: 768px) {
   
+    /* .long-name {
+      display: none;
+    }
+  
+    .period {
+      display: inline;
+    } */
+  
     .dropdown {
       float: left;
     }
@@ -304,9 +344,9 @@
   }; */
   
   /* NEW CSS */
-  #slideshowDotDiv {
+  /* #slideshowDotDiv {
     text-align: center;
-  }
+  } */
   
   /* start of our css file */
     
@@ -421,3 +461,4 @@
   from {opacity: .4}
   to {opacity: 1}
   }
+
