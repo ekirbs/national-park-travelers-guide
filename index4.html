@@ -175,37 +175,13 @@
 
       <section id="about-site" class="about-site-section">
         <p>Greetings!  You want to explore nature.  You want to visit a park.  But you want to find the right park.  This app allows you to find important information about the park, and the weather forecast for the upcoming week to help you make a decision.</p>
-        <div class="col s4">
-          <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdownParks'>Drop Me!</a>
-    
-          <!-- Dropdown Structure -->
-          <ul id='dropdownParks' class='dropdown-content'>
-            <li id="acad"><a>Acadia</a></li>
-            <li id="arch"><a>Arches</a></li>
-            <li id="dena"><a>Denali</a></li>
-            <li id="ever"><a>Everglade</a></li>
-            <li id="glac"><a>Glacier</a></li>
-            <li id="glca"><a>Grand Canyon</a></li>
-            <li id="romo"><a>Rocky Mountain</a></li>
-            <li id="redw"><a>Redwood</a></li>
-            <li id="seki"><a>Sequioa</a></li>
-            <li id="yell"><a>Yellstone</a></li>
-            <li id="yose"><a>Yosemite</a></li>
-    
-            <li class="divider"></li>
-            <li>
-                <a class='dropdown-button2' href='#' data-activates='dropdown2'>New Jersey></a>
-            </li>
-          </ul>
-          <ul id='dropdown2' class='dropdown-content'>
-              <li><a href="#!">one</a></li>
-              <li><a href="#!">two</a></li>
-          </ul>
-            
-            <!-- <li id="glac"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-            <li id="yose"><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
-          <!-- </ul> -->
-        </div>
+        <ul id="menu">
+          <li id="menu_button" onmouseenter="showParks()" onmouseleave="hideParks()"> National Parks
+            <ul id="drop-down">  
+            </ul> 
+          </li> 
+        </ul>       
+  
       </section>
 
       <!-- ABOUT PARK SECTION -->
