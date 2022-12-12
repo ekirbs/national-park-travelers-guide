@@ -4,57 +4,6 @@ var weatherApiKey = "3044316f6126db93462603440b6cd43c";
 var units = 'imperial';
 var lang = 'en';
 
-var parks = [
-  {
-    parkName: 'Yellowstone',
-    parkCode: "YELL",
-  },
-  {
-    parkName: 'Acadia',
-    parkCode: 'ACAD',
-  },
-  {
-    parkName: 'The Grand Canyon',
-    parkCode: 'GLCA'
-  },
-  {
-    parkName: 'Rocky Mountain',
-    parkCode: 'ROMO'
-  },
-  {
-    parkName: 'Arches',
-    parkCode: 'ARCH'
-  },
-  {
-    parkName: 'Glacier',
-    parkCode: 'GLAC'
-  },
-  {
-    parkName: 'Yosemite',
-    parkCode: 'YOSE'
-  },
-  {
-    parkName: 'Sequoia',
-    parkCode: 'SEKI'
-  },
-
-  {
-    parkName: 'Redwood',
-    parkCode: 'REDW'
-
-  },
-  {
-    parkName: 'Everglade',
-    parkcode: 'EVER'
-  },
-
-  {
-    parkName: 'Denali',
-    parkCode: 'DENA'
-  },
-
-]
-
 // TIME & SEARCH HISTORY DISPLAY FUNCTION ON PAGE LOAD
 function init() {
   setInterval(function() {
@@ -65,6 +14,7 @@ function init() {
 };
 
 init();
+$(".dropdown-trigger").dropdown();
 
 // $(document).ready(function) {
 // WEATHER DISPLAY FUNCTION
@@ -86,8 +36,6 @@ function displayChosenPark() {
     })
     .then(function (data) {
       console.log(data);
-
-      // var featureCard = $("<div>");
 
       var activities = data.data[0].activities;
       console.log(activities)
@@ -115,13 +63,10 @@ function displayChosenPark() {
       console.log(streetName + ' ' + city + ' ,' + zip + ' ,' + state);
 
       var directions = data.data[0].directionsInfo;
-      // console.log(directions);
+ 
 
       var directionsUrl = data.data[0].directionsUrl;
       console.log(directionsUrl);
-
-      // var activities = data.data[0].activities[0].name;
-      // console.log(activities);
 
       var hours = data.data[0].operatingHours[0].standardHours;
       console.log(hours);
@@ -141,7 +86,6 @@ function displayChosenPark() {
         + "Friday: " + hours.friday + "<br/>"
         + "Saturday: " + hours.saturday + "<br/>")
 
-      // $("#park-info").append(featureCard);
     })
 }
 
@@ -172,76 +116,8 @@ function displayChosenPark() {
       //   $('#dotContainer').append(dotSpan);
       // }
 
-
-
-      // var featureCard = $("<div class='card feature-card zoom'>");
-
-      // var name = data.city.name;
-      // var city = $('<h1>').text(name);
-      // featureCard.append(city);
-        
-      // var dateDisplay = $('<h2>').text((dayjs()).format('M/D/YYYY'));    
-      // featureCard.append(dateDisplay);
-        
-      // var featureImg = $(`<img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png" id="icon">`)
-      // featureCard.append(featureImg);
-        
-      // var featureBody = $('<div class="card-body">');
-      // featureCard.append(featureBody);
-        
-      // var temperature = data.list[0].main.temp;      
-      // var tempDisplay = $('<p class="card-text">').text(`Temp: ${temperature}`);
-      // featureBody.append(tempDisplay);
-        
-      // var windSpeed = data.list[0].wind.speed;      
-      // var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);
-      // featureBody.append(windDisplay);
-        
-      // var humidity = data.list[0].main.humidity;      
-      // var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);
-      // featureBody.append(humidDisplay);
-     
-      // $('#feature-spot').prepend(featureCard);
-
-      // 5 DAY WEATHER DISPLAY LOOP
-//       for (var i = 0; i < 5; i += 1) {
-          
-//         var day = i * 8;
-//         var count = i;
-//         console.log(day, count);
-  
-//         var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
-      
-//         $('#weather-spot').append(weatherArticle);
-  
-//         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
-//         $(`#article${count}`).append(dateDisplay);
-       
-//         var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`)
-//         $(`#article${count}`).append(weatherImg);
-  
-//         var weatherBody = $(`<div id="weatherBody${count}" class="card-body">`)
-//         $(`#article${count}`).append(weatherBody);
-          
-//         var temperature = data.list[day + 1].main.temp;          
-//         var tempDisplay = $('<p class="card-text">').text(`Temp: ${temperature}`);          
-//         $(`#weatherBody${count}`).append(tempDisplay);
-          
-//         var windSpeed = data.list[day + 1].wind.speed;          
-//         var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);          
-//         $(`#weatherBody${count}`).append(windDisplay);
-          
-//         var humidity = data.list[day + 1].main.humidity;          
-//         var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);          
-//         $(`#weatherBody${count}`).append(humidDisplay);
-            
-//       }        
-//     })
-// };
-
 // WEATHER DISPLAY FROM HISTORY FUNCTION
 function displayChosenCity() {
-
 
   $("#feature-spot").empty();
 
@@ -257,32 +133,7 @@ function displayChosenCity() {
       return response.json();
     })
     .then(function (data) {
-      // console.log(data);
-
-      // $("#weather").empty();
-
-      // var featureCard = $("<div>");
-
-      // var temperature = data.list[0].main.temp
-      // // var tempToF = ((temperature - 273.15) * 9/5 + 32).toFixed();
-
-
-      // console.log((temperature - 273.15) * 9 / 5 + 32);
-
-      // var windSpeed = data.list[0].wind.speed;
-
-      // console.log(windSpeed);
-
-      // var humidity = data.list[0].main.humidity;
-
-      // console.log(humidity + '%');
-
-      // featureCard.append("<br/>" + temperature + " degrees F");
-      // featureCard.append("<br/>" + windSpeed + " mph");
-      // featureCard.append("<br/>" + humidity + "% humidity");
-
-      // $("#weather").append(featureCard);
-
+      
       var featureCard = $("<div class='card feature-card zoom'>");
 
       var name = data.city.name;
@@ -316,41 +167,33 @@ function displayChosenCity() {
           
         var day = i * 8;
         var count = i;
-        // console.log(day, count);
-  
+        
         var weatherArticle = $(`<div id="article${count}" class="card card-alt zoom">`);
-        // console.log(weatherArticle);
+        
         $('#weather').append(weatherArticle);
   
         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
         $(`#article${count}`).append(dateDisplay);
-        // console.log(dateDisplay);
         
         var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`)
         $(`#article${count}`).append(weatherImg);
-        // console.log(weatherImg);
   
         var weatherBody = $(`<div id="weatherBody${count}" class="card-body">`)
         $(`#article${count}`).append(weatherBody);
-        // console.log(weatherBody);
           
         var temperature = data.list[day + 1].main.temp;          
         var tempDisplay = $('<p class="card-text">').text(`Temp: ${temperature}`);          
         $(`#weatherBody${count}`).append(tempDisplay);
-        // console.log( temperature, tempDisplay);
           
         var windSpeed = data.list[day + 1].wind.speed;          
         var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);          
         $(`#weatherBody${count}`).append(windDisplay);
-        // console.log (windSpeed, windDisplay);
           
         var humidity = data.list[day + 1].main.humidity;          
         var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);          
         $(`#weatherBody${count}`).append(humidDisplay);
-        // console.log(humidity, humidDisplay);
           
       }        
-
     })
 };
 
@@ -364,17 +207,13 @@ function renderHistory() {
       
   $('#history-spot').empty();
 
-  $('#feature-spot').empty();
-
-  $('#weather-spot').empty();
-
-  var cities = JSON.parse(localStorage.getItem('cities')) || [];    
+  var cities = getLocalStorage();
     
   for (i = 0; i < cities.length; i++) {
       
-    var histButton = $('<button class="hist-btn btn btn-outline-dark">');
+    var histButton = $('<button class="hist-btn btn">');
       
-    histButton.addClass('btn hist-btn');
+    histButton.addClass('hist-btn');
       
     histButton.attr('data-name', cities[i]);
       
@@ -386,7 +225,7 @@ function renderHistory() {
 };
 
 // ON BUTTON CLICK, ADD SEARCHED CITIES TO HISTORY AND RENDER HISTORY & WEATHER
-$('.dropdown-btn-btn').on('click', function (event) {
+$('.dropdown-btn').on('click', function (event) {
           
   event.preventDefault();
         
@@ -394,30 +233,28 @@ $('.dropdown-btn-btn').on('click', function (event) {
   
   console.log(cities);
  
-  var cityName = $("#search-input").val().trim();
-  console.log(cityName);
-  
-  if (cities.includes(cityName)) {
+
+  var city = event.target.innerHTML;
+  console.log(city);
+
+  if (cities.includes(city)) {
     console.log("already chosen");
   } else {
-    cities.push(cityName);
+    cities.push(city);
     console.log(cities);
     
     if (cities.length > 5) {  
-      cities.sort();
+      cities.shift();
     };
 
     localStorage.setItem("cities", JSON.stringify(cities));
   };
   
   renderHistory();
-  displayChosenCity();
 })
 
-// WEATHER DDISPLAY WHEN SEARCH HISTORY IS CLICKED
+// WEATHER DISPLAY WHEN SEARCH HISTORY IS CLICKED
 $(document).on('click', '.hist-btn', displayChosenCity);
-
-$('.dropdown-trigger').dropdown();
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -443,11 +280,11 @@ function showSlides(n) {
   }
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
-}
+};
 
+// DROPDOWN BUTTON CLICKS
 $("#acad").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = 'ACAD';
   city = 'Bar Harbor, Maine';
@@ -455,19 +292,10 @@ $("#acad").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  let div = document.createElement("div")
-  let p = document.createElement("p")
-  div.append("Some text", p)
-
-  console.log(div.childNodes) // NodeList [ #text "Some text", <p>
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#arch").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "ARCH";
   city = "Moab,Utah";
@@ -475,14 +303,10 @@ $("#arch").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#dena").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "DENA";
   city = "Healy, Alaska";
@@ -490,14 +314,10 @@ $("#dena").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#ever").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "EVER";
   city = "Everglades City, Florida";
@@ -505,14 +325,10 @@ $("#ever").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#glac").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "GLAC";
   city = "Columbia Falls, Montana";
@@ -520,14 +336,10 @@ $("#glac").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#glca").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "GLCA";
   city = "Tusayan, Arizona";
@@ -535,14 +347,10 @@ $("#glca").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#redw").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "REDW";
   city = "Crescent City, California";
@@ -550,14 +358,10 @@ $("#redw").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#romo").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "ROMO";
   city = "Denver, Colorado";
@@ -565,14 +369,10 @@ $("#romo").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#seki").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "SEKI";
   city = "Visalia,California";
@@ -580,14 +380,10 @@ $("#seki").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#yell").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "YELL";
   city = "Gardiner, Montana";
@@ -595,15 +391,10 @@ $("#yell").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-
-  // cities.push(cityName);
-
-  // renderCards();
 });
 
 $("#yose").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "YOSE";
   city = "Mariposa, California";
@@ -611,11 +402,4 @@ $("#yose").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  // cities.push(cityName);
-
-  // renderCards();
 });
-
-$(".dropdown-trigger").dropdown();
-
-// }

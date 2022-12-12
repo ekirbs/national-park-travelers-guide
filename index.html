@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +11,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/stylek.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-  <title>National Park Traveler's Guide</title>
+  <title>Northeast National Park Traveler's Guide</title>
 
 </head>
 
@@ -23,25 +22,11 @@
   <a id="home"></a>
 
   <header>
-    <h1>National Park Traveler's Guide</h1>
+    <h1>Northeast National Park Traveler's Guide</h1>
     <img src="./assets/images/nps-symbol.jpg" alt="An outline of the NPS symbol." />
     <p class="lead">A National Park traveler's guide for the Northeast USA region.</p>
     <p id="currentDay" class="lead"></p>
   </header>
-
-  <!-- <nav class="navbar">
-      <a href="#home">Back to Top</a>
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown<i class="fa fa-caret-down"></i></button>
-        <div class="dropdown-content">
-          <a href="#about-site">About This Site</a>
-          <a href="#park-info">Park Information</a>
-          <a href="#daily-weather">Weather Report</a>
-          <a href="#park-news">Park News</a>
-          <a href="#contact-park">Contact Park</a>
-        </div>
-      </div>
-    </nav> -->
 
   <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content">
@@ -57,11 +42,9 @@
   </ul>
   <nav class="navbar">
     <div class="nav-wrapper">
-      <!-- <h1>National Park Traveler's Guide</h1> -->
       <ul class="right hide-on-med-and-down">
         <li><a href="#home">Back to Top</a></li>
         <!-- Dropdown Trigger -->
-        <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Page Navigation<i class="material-icons right">arrow_drop_down</i></a></li> -->
         <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Page Navigation</a></li>
       </ul>
     </div>
@@ -186,7 +169,7 @@
 
     <section id="about-site" class="about-site-section">
       <div class="col s4">
-        <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdownParks'>Drop Me!</a>
+        <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdownParks'>Choose a Park!</a>
 
         <!-- Dropdown Structure -->
         <ul id='dropdownParks' class='dropdown-content'>
@@ -204,6 +187,7 @@
 
           <!-- <li class="divider"></li>
           <li>
+            <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdown'>Choose a Park!</a>
             <a class='dropdown-button2' href='#' data-activates='dropdown2'>New Jersey></a>
           </li>
         </ul>
@@ -219,7 +203,6 @@
       <div id="history-spot"></div>
     </section>
 
-
     <!-- PARK INFO SECTION -->
     <section id="park-info-header" class="section-label">
       <h3>Park Info</h3>
@@ -229,7 +212,6 @@
 
       <article class="card card-main zoom">
         <div id="activity-card"></div>
-        <!-- <a target="_blank" href="https://ekirbs.github.io/code-refactor/"><img src="./assets/images/horiseon-screenshot.jpg" class="project-image" alt="A screenshot of an informational website."/></a> -->
         <div class="img-text">
           <h3>Activities</h3>
           <p>Enjoy the activities!</p>
@@ -237,17 +219,7 @@
       </article>
 
       <article class="card card-alt zoom">
-        <div id="park-weather-card"></div>
-        <!-- <a target="_blank" href="#project-two"><img src="./assets/images/fireworks-road.jpg" class="project-image" alt="Fireworks over a road."/></a> -->
-        <div class="img-text">
-          <h3>Best Time of Year</h3>
-          <p>gives a yearly weather report</p>
-        </div>
-      </article>
-
-      <article class="card card-alt zoom">
         <div id="park-description-card"></div>
-        <!-- <a target="_blank" href="#project-three"><img src="./assets/images/tree-lined-road.jpg" class="project-image" alt="A tree-lined road."/></a> -->
         <div class="img-text">
           <h3>Park Description</h3>
           <p>stuff about the park</p>
@@ -255,8 +227,15 @@
       </article>
 
       <article class="card card-alt zoom">
+        <div id="park-weather-card"></div>
+        <div class="img-text">
+          <h3>Best Time of Year</h3>
+          <p>gives a yearly weather report</p>
+        </div>
+      </article>
+
+      <article class="card card-alt zoom">
         <div id="park-directions-card"></div>
-        <!-- <a target="_blank" href="#project-four"><img src="./assets/images/fireworks-sky.jpg" class="project-image" alt="Fireworks in the night sky."/></a> -->
         <div class="img-text">
           <h3>Directions</h3>
           <p>how to get to the park</p>
@@ -265,10 +244,9 @@
 
       <article class="card card-alt zoom">
         <div id="park-hours-card"></div>
-        <!-- <a target="_blank" href="#project-five"><img src="./assets/images/thinking-robot.jpg" class="project-image" alt="Thinking robot."/></a> -->
         <div class="img-text">
           <h3>Hours</h3>
-          <p>Park hours of operation</p>
+          <p>hours of operation</p>
         </div>
       </article>
 
@@ -292,22 +270,19 @@
     </section>
 
     <section class="contact-park-section">
-      <a href="tel:5558675309">(555) 867-5309</a>
-      <a href="mailto:natparkwebsite@email.com">natparkwebsite@email.com</a>
+      <!-- <a href="tel:5558675309">Jenny: (555) 867-5309</a> -->
+      <a href="https://www.nps.gov/index.htm">https://www.nps.gov/index.htm</a>
       <div id="contact-park"></div>
     </section>
 
   </main>
 
-  <footer></footer>
-
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-  <script src="./assets/js/scriptK.js"></script>
+  <script src="./assets/js/script.js"></script>
 
 </body>
 

@@ -1,5 +1,4 @@
 /* || GENERAL STYLES */
-
 :root {
     --dark-background: #43a047;
     --light-background: #81c784;
@@ -21,7 +20,6 @@
   }
   
   /* || HEADER */
-  
   header {
     background-color: var(--dark-background);
     color: var(--white);
@@ -33,7 +31,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* text-align: center; */
   }
   
   header h1 {
@@ -55,14 +52,6 @@
   }
   
   /* || NAVIGATION BAR */
-  
-  /* .nav-wrapper h1 {
-    display: inline-block;
-    font-size: 48px;
-    text-decoration: underline var(--yellow-highlight);
-    margin-left: 20px;
-  } */
-  
   .navbar {
     position: fixed;
     bottom: 0;
@@ -137,21 +126,115 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
-  /* || BACKGROUND IMAGE */
-  
-  /* figure img {
-    min-height: 100px;
+
+  /* || SLIDESHOW */
+  #slideshowDotDiv {
+    text-align: center;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    }
+    
+    /* Hide the images by default */
+    .mySlides {
+    display: none;
+    }
+    
+    .mySlides img {
     height: auto;
+    min-height: 100px;
+    max-height: 1000px;
     width: 100%;
-  } */
+    height: 500px;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(99, 96, 96);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    }
+    
+    .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+    .text {
+    color: #000000;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: sticky;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+    color: #000000;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: sticky;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+    background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+    }
   
   /* || MAIN CONTENT - GENERAL */
-  
   .main-content {
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 11% 22% 99% 33% 99% 22%;
+    grid-template-rows: 11% 22% 99% 33% 22%;
     grid-gap: 1em;
     margin: 1em;
   }
@@ -176,25 +259,7 @@
     text-decoration: underline var(--yellow-highlight);
   }
   
-  /* || ABOUT ME SECTION */
-  
-  /* .about-me-section p {
-    color: var(--dark-highlight);
-  }
-  
-  .name {
-    font-size: 1.25em;
-    background: linear-gradient(red, orange);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-decoration: underline var(--yellow-highlight);
-  } */
-  
-  /* || PROJECTS SECTION */
-
-
-
+  /* || PARK INFO SECTION */
   #park-weather-card, #activity-card, #park-hours-card,  #contact-park, #park-directions-card,  #park-description-card, #park-name {
     padding: 5%;
     color: #000000;
@@ -240,7 +305,7 @@
     margin: 2px;
     min-width: 100%;
     min-height: 100%;
-    grid-area: 1 / 1 / span 1 / span 2;
+    grid-area: 1 / 1 / span 2 / span 1;
   }
   
   .card-alt {
@@ -274,7 +339,6 @@
   }
   
   /* || CONTACT PARK SECTION */
-  
   .contact-park-section {
     display: flex;
     justify-content: space-around;
@@ -289,16 +353,7 @@
   }
   
   /* || VIEWPORT RESIZING */
-  
   @media screen and (max-width: 768px) {
-  
-    /* .long-name {
-      display: none;
-    }
-  
-    .period {
-      display: inline;
-    } */
   
     .dropdown {
       float: left;
@@ -342,122 +397,3 @@
       grid-template-rows: 40% 75% 33%;
     }
   }; */
-  
-  /* NEW CSS */
-  /* #slideshowDotDiv {
-    text-align: center;
-  } */
-  
-  /* start of our css file */
-    
-  /* #title-photo {
-    width: 100%;
-    height: 25%;
-   
-  }
-  
-  .temp {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 50px;
-  }
-  
-  * {box-sizing:border-box} */
-  
-  /* Slideshow container */
-  .slideshow-container {
-  max-width: 100%;
-  position: relative;
-  margin: auto;
-  }
-  
-  /* Hide the images by default */
-  .mySlides {
-  display: none;
-  }
-  
-  .mySlides img {
-  height: auto;
-  min-height: 100px;
-  max-height: 1000px;
-  width: 100%;
-  height: 500px;
-  }
-  
-  /* Next & previous buttons */
-  .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: rgb(99, 96, 96);
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-  }
-  
-  .prev {
-  left: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-  }
-  
-  /* Caption text */
-  .text {
-  color: #000000;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: sticky;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-  }
-  
-  /* Number text (1/3 etc) */
-  .numbertext {
-  color: #000000;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: sticky;
-  }
-  
-  /* The dots/bullets/indicators */
-  .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-  }
-  
-  .active, .dot:hover {
-  background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-  }
