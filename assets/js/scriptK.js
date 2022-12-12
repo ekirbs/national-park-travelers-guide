@@ -364,17 +364,17 @@ function renderHistory() {
       
   $('#history-spot').empty();
 
-  // $('#feature-spot').empty();
+  $('#feature-spot').empty();
 
-  // $('#weather-spot').empty();
+  $('#weather-spot').empty();
 
-  var cities = getLocalStorage()    
+  var cities = JSON.parse(localStorage.getItem('cities')) || [];    
     
   for (i = 0; i < cities.length; i++) {
       
-    var histButton = $('<button class="hist-btn btn">');
+    var histButton = $('<button class="hist-btn btn btn-outline-dark">');
       
-    histButton.addClass('hist-btn');
+    histButton.addClass('btn hist-btn');
       
     histButton.attr('data-name', cities[i]);
       
@@ -386,36 +386,32 @@ function renderHistory() {
 };
 
 // ON BUTTON CLICK, ADD SEARCHED CITIES TO HISTORY AND RENDER HISTORY & WEATHER
-$('.dropdown-btn').on('click', function (event) {
+$('.dropdown-btn-btn').on('click', function (event) {
           
   event.preventDefault();
         
   var cities = getLocalStorage();
   
   console.log(cities);
-
-
- var city;
-  document.querySelector('.dropdown-btn').onclick = function(event) {
-    city = event.target.innerHTML;
-  }
-  console.log(city);
-
-  if (cities.includes(city)) {
+ 
+  var cityName = $("#search-input").val().trim();
+  console.log(cityName);
+  
+  if (cities.includes(cityName)) {
     console.log("already chosen");
   } else {
-    cities.push(city);
+    cities.push(cityName);
     console.log(cities);
     
     if (cities.length > 5) {  
-      cities.shift();
+      cities.sort();
     };
 
     localStorage.setItem("cities", JSON.stringify(cities));
   };
   
   renderHistory();
-  // displayChosenCity();
+  displayChosenCity();
 })
 
 // WEATHER DDISPLAY WHEN SEARCH HISTORY IS CLICKED
