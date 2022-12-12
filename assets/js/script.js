@@ -4,57 +4,6 @@ var weatherApiKey = "3044316f6126db93462603440b6cd43c";
 var units = 'imperial';
 var lang = 'en';
 
-var parks = [
-  {
-    parkName: 'Yellowstone',
-    parkCode: "YELL",
-  },
-  {
-    parkName: 'Acadia',
-    parkCode: 'ACAD',
-  },
-  {
-    parkName: 'The Grand Canyon',
-    parkCode: 'GLCA'
-  },
-  {
-    parkName: 'Rocky Mountain',
-    parkCode: 'ROMO'
-  },
-  {
-    parkName: 'Arches',
-    parkCode: 'ARCH'
-  },
-  {
-    parkName: 'Glacier',
-    parkCode: 'GLAC'
-  },
-  {
-    parkName: 'Yosemite',
-    parkCode: 'YOSE'
-  },
-  {
-    parkName: 'Sequoia',
-    parkCode: 'SEKI'
-  },
-
-  {
-    parkName: 'Redwood',
-    parkCode: 'REDW'
-
-  },
-  {
-    parkName: 'Everglade',
-    parkcode: 'EVER'
-  },
-
-  {
-    parkName: 'Denali',
-    parkCode: 'DENA'
-  },
-
-]
-
 // TIME & SEARCH HISTORY DISPLAY FUNCTION ON PAGE LOAD
 function init() {
   setInterval(function() {
@@ -258,10 +207,6 @@ function renderHistory() {
       
   $('#history-spot').empty();
 
-  // $('#feature-spot').empty();
-
-  // $('#weather-spot').empty();
-
   var cities = getLocalStorage();
     
   for (i = 0; i < cities.length; i++) {
@@ -306,10 +251,9 @@ $('.dropdown-btn').on('click', function (event) {
   };
   
   renderHistory();
-  // displayChosenCity();
 })
 
-// WEATHER DDISPLAY WHEN SEARCH HISTORY IS CLICKED
+// WEATHER DISPLAY WHEN SEARCH HISTORY IS CLICKED
 $(document).on('click', '.hist-btn', displayChosenCity);
 
 let slideIndex = 1;
@@ -338,9 +282,9 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 };
 
+// DROPDOWN BUTTON CLICKS
 $("#acad").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = 'ACAD';
   city = 'Bar Harbor, Maine';
@@ -348,17 +292,10 @@ $("#acad").on("click", function (event) {
   displayChosenPark();
   displayChosenCity();
 
-  let div = document.createElement("div")
-  let p = document.createElement("p")
-  div.append("Some text", p)
-
-  // console.log(div.childNodes);
-
 });
 
 $("#arch").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "ARCH";
   city = "Moab,Utah";
@@ -370,7 +307,6 @@ $("#arch").on("click", function (event) {
 
 $("#dena").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "DENA";
   city = "Healy, Alaska";
@@ -382,7 +318,6 @@ $("#dena").on("click", function (event) {
 
 $("#ever").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "EVER";
   city = "Everglades City, Florida";
@@ -394,7 +329,6 @@ $("#ever").on("click", function (event) {
 
 $("#glac").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "GLAC";
   city = "Columbia Falls, Montana";
@@ -406,7 +340,6 @@ $("#glac").on("click", function (event) {
 
 $("#glca").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "GLCA";
   city = "Tusayan, Arizona";
@@ -418,7 +351,6 @@ $("#glca").on("click", function (event) {
 
 $("#redw").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "REDW";
   city = "Crescent City, California";
@@ -430,7 +362,6 @@ $("#redw").on("click", function (event) {
 
 $("#romo").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "ROMO";
   city = "Denver, Colorado";
@@ -442,7 +373,6 @@ $("#romo").on("click", function (event) {
 
 $("#seki").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "SEKI";
   city = "Visalia,California";
@@ -454,7 +384,6 @@ $("#seki").on("click", function (event) {
 
 $("#yell").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "YELL";
   city = "Gardiner, Montana";
@@ -466,7 +395,6 @@ $("#yell").on("click", function (event) {
 
 $("#yose").on("click", function (event) {
   event.preventDefault();
-  console.log("button is working");
 
   park = "YOSE";
   city = "Mariposa, California";
