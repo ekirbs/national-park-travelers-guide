@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="A National Park traveler's guide for the Northeast USA region."/>
+    <link rel="stylesheet" href="./assets/css/reset.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./assets/css/stylek.css">
+    
+    <title>National Park Traveler's Guide</title>
+
+  </head>
+
+  <body>
+
+    <a id="home"></a>
+
+    <header>
+      <h1>National Park Traveler's Guide</h1>
+      <img src="./assets/images/nps-symbol.jpg" alt="An outline of the NPS symbol."/>
+      <p class="lead">A National Park traveler's guide for the Northeast USA region.</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+      
+    <!-- <nav class="navbar">
+      <a href="#home">Back to Top</a>
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown<i class="fa fa-caret-down"></i></button>
+        <div class="dropdown-content">
+          <a href="#about-site">About This Site</a>
+          <a href="#park-info">Park Information</a>
+          <a href="#daily-weather">Weather Report</a>
+          <a href="#park-news">Park News</a>
+          <a href="#contact-park">Contact Park</a>
+        </div>
+      </div>
+    </nav> -->
+      
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#about-site">About This Site</a></li>
+      <li class="divider"></li>
+      <li><a href="#park-info-section">Park Information</a></li>
+      <li class="divider"></li>
+      <li><a href="#park-weather-card">Weather Report</a></li>
+      <li class="divider"></li>
+      <li><a href="#park-news-section">Park News</a></li>
+      <li class="divider"></li>
+      <li><a href="#contact-park">Contact Park</a></li>
+    </ul>
+    <nav class="navbar">
+      <div class="nav-wrapper">
+        <!-- <h1>National Park Traveler's Guide</h1> -->
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#home">Back to Top</a></li>
+          <!-- Dropdown Trigger -->
+          <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Page Navigation<i class="material-icons right">arrow_drop_down</i></a></li> -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Page Navigation</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <br />
+    <br />
+
+    <!-- PARK SLIDESHOW -->
+    <figure>
+      <div id="slideshow" class="slideshow-container">
+        <!-- prepend slides into #slideshow -->
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 11</div>
+          <img src="./assets/images/acad-2.jpeg">
+          <div class="text">ACADIA</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 11</div>
+          <img src="./assets/images/arches-1.jpeg">
+          <div class="text">ARCHES</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 11</div>
+          <img src="./assets/images/glca-1.jpg">
+          <div class="text">GRAND CANYON</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 11</div>
+          <img src="./assets/images/romo-1.jpeg">
+          <div class="text">ROCKY MOUNTAIN</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 11</div>
+          <img src="./assets/images/yell-1.jpg">
+          <div class="text">YELLOWSTONE</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">6 / 11</div>
+          <img src="./assets/images/glac-1.jpg">
+          <div class="text">GLACIER</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">7 / 11</div>
+          <img src="./assets/images/yose-1.jpeg">
+          <div class="text">YOSEMITE</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">8 / 11</div>
+          <img src="./assets/images/seki-1.jpeg">
+          <div class="text">SEQUIOA</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">9 / 11</div>
+          <img src="./assets/images/redw-1.jpeg">
+          <div class="text">REDWOOD</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">10 / 11</div>
+          <img src="./assets/images/ever-1.jpeg">
+          <div class="text">EVERGLADE</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">11 / 11</div>
+          <img src="./assets/images/dena-1.jpg">
+          <div class="text">DENALI</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      <!-- The dots/circles -->
+      <div id="slideshowDotDiv">
+        <span class="dot" onclick="currentSlide[1]"></span>
+        <span class="dot" onclick="currentSlide[2]"></span>
+        <span class="dot" onclick="currentSlide[3]"></span>
+        <span class="dot" onclick="currentSlide[4]"></span>
+        <span class="dot" onclick="currentSlide[5]"></span>
+        <span class="dot" onclick="currentSlide[6]"></span>
+        <span class="dot" onclick="currentSlide[7]"></span>
+        <span class="dot" onclick="currentSlide[8]"></span>
+        <span class="dot" onclick="currentSlide[9]"></span>
+        <span class="dot" onclick="currentSlide[10]"></span>
+        <span class="dot" onclick="currentSlide[11]"></span>
+      </div>
+    </figure>
+
+    <br />
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- ABOUT PARK SECTION -->
+      <section class="section-label about-site-header">
+        <h3>Welcome!</h3>
+      </section>
+
+      <section id="about-site" class="about-site-section">
+        <p id="greetings">Greetings!  You want to explore nature.  You want to visit a park.  But you want to find the right park.  This app allows you to find important information about the park, and the weather forecast for the upcoming week to help you make a decision.</p>
+        <div class="col s4">
+          <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdownParks'>Drop Me!</a>
+    
+          <!-- Dropdown Structure -->
+          <ul id='dropdownParks' class='dropdown-content'>
+            <li id="acad"><a>Acadia</a></li>
+            <li id="arch"><a>Arches</a></li>
+            <li id="dena"><a>Denali</a></li>
+            <li id="ever"><a>Everglade</a></li>
+            <li id="glac"><a>Glacier</a></li>
+            <li id="glca"><a>Grand Canyon</a></li>
+            <li id="romo"><a>Rocky Mountain</a></li>
+            <li id="redw"><a>Redwood</a></li>
+            <li id="seki"><a>Sequioa</a></li>
+            <li id="yell"><a>Yellstone</a></li>
+            <li id="yose"><a>Yosemite</a></li>
+    
+            <li class="divider"></li>
+            <li>
+                <a class='dropdown-button2' href='#' data-activates='dropdown2'>New Jersey></a>
+            </li>
+          </ul>
+          <ul id='dropdown2' class='dropdown-content'>
+              <li><a href="#!">one</a></li>
+              <li><a href="#!">two</a></li>
+          </ul>
+            
+            <!-- <li id="glac"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+            <li id="yose"><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
+          <!-- </ul> -->
+        </div>
+      </section>
+
+      <!-- ABOUT PARK SECTION -->
+      <section class="section-label park-name-header">
+        <h3>Park Name</h3>
+      </section>
+
+      <section id="park-name" class="park-name-section"></section>
+
+      <!-- PARK INFO SECTION -->
+      <section id="park-info-header" class="section-label">
+        <h3>Park Info</h3>
+      </section>
+
+      <section id="park-info-section" class="projects-section">
+        
+        <article class="card card-main zoom">
+          <div id="activity-card"></div>
+          <!-- <a target="_blank" href="https://ekirbs.github.io/code-refactor/"><img src="./assets/images/horiseon-screenshot.jpg" class="project-image" alt="A screenshot of an informational website."/></a> -->
+          <div class="img-text">
+            <h3>Activities</h3>
+            <p>Enjoy the activities!</p>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          <div id="park-weather-card"></div>
+          <!-- <a target="_blank" href="#project-two"><img src="./assets/images/fireworks-road.jpg" class="project-image" alt="Fireworks over a road."/></a> -->
+          <div class="img-text">
+            <h3>Best Time of Year</h3>
+            <p>gives a yearly weather report</p>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          <div id="park-description-card"></div>
+          <!-- <a target="_blank" href="#project-three"><img src="./assets/images/tree-lined-road.jpg" class="project-image" alt="A tree-lined road."/></a> -->
+          <div class="img-text">
+            <h3>Park Description</h3>
+            <p>stuff about the park</p>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          <div id="park-directions-card"></div>
+          <!-- <a target="_blank" href="#project-four"><img src="./assets/images/fireworks-sky.jpg" class="project-image" alt="Fireworks in the night sky."/></a> -->
+          <div class="img-text">
+            <h3>Directions</h3>
+            <p>how to get to the park</p>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          <div id="park-hours-card"></div>
+          <!-- <a target="_blank" href="#project-five"><img src="./assets/images/thinking-robot.jpg" class="project-image" alt="Thinking robot."/></a> -->
+          <div class="img-text">
+            <h3>Hours</h3>
+            <p>Park hours of operation</p>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- WEATHER FORECAST SECTION -->
+      <section class="section-label weather-forecast-header">
+        <h3>Weather Forecast</h3>
+      </section>
+
+      <section id="daily-weather" class="daily-section">
+        <div class="container col s8">
+          <div id="weather"></div>
+        </div>
+      </section>
+      
+      <!-- NEWS SECTION -->
+      <!-- ARTICLES???? -->
+      <section class="section-label projects-header"> 
+        <h3>Park News</h3>
+      </section>
+
+      <section id="park-news-section" class="projects-section">
+
+        <article class="card card-main zoom">
+          <!-- <a target="_blank" href="https://ekirbs.github.io/code-refactor/"><img src="./assets/images/horiseon-screenshot.jpg" class="project-image" alt="A screenshot of an informational website."/></a> -->
+          <div class="img-text">
+            <h3>News 1</h3>
+            <p>news story info</p>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          <!-- <a target="_blank" href="#project-two"><img src="./assets/images/fireworks-road.jpg" class="project-image" alt="Fireworks over a road."/></a> -->
+          <div class="img-text">
+            <h3>News 2</h3>
+            <p>news story info</p>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          <!-- <a target="_blank" href="#project-three"><img src="./assets/images/tree-lined-road.jpg" class="project-image" alt="A tree-lined road."/></a> -->
+          <div class="img-text">
+            <h3>News 3</h3>
+            <p>news story info</p>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          <!-- <a target="_blank" href="#project-four"><img src="./assets/images/fireworks-sky.jpg" class="project-image" alt="Fireworks in the night sky."/></a> -->
+          <div class="img-text">
+            <h3>News 4</h3>
+            <p>news story info</p>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          <!-- <a target="_blank" href="#project-five"><img src="./assets/images/thinking-robot.jpg" class="project-image" alt="Thinking robot."/></a> -->
+          <div class="img-text">
+            <h3>News 5</h3>
+            <p>news story info</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- CONTACT PARK SECTION -->
+      <section class="section-label contact-park-header">
+        <h3>Contact the Park</h3>
+      </section>
+
+      <section class="contact-park-section">
+        <a href="tel:5558675309">(555) 867-5309</a>
+        <a href="mailto:natparkwebsite@email.com">natparkwebsite@email.com</a>
+        <div id="contact-park"></div>
+      </section>
+
+    </main>
+
+    <footer></footer>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+  <script src="./assets/js/scriptk.js"></script>
+
+  </body>
+  
+</html>
