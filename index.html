@@ -169,9 +169,157 @@
 
     <section id="about-site" class="about-site-section">
       <div class="col s4">
-        <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdownParks'>Choose a Park!</a>
-
         <!-- Dropdown Structure -->
+        <a class='dropdown-trigger btn' href='#' data-target='dropdownBase' >Menu</a>
+
+        <ul id='dropdownBase' class='dropdown-content dropdown-nested'>
+    
+          <li><a class='dropdown-trigger sub' href='#' data-target='dropdownCT' >Connecticut</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownDE" >Delaware</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownME" >Maine</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownMD" >Maryland</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownMA" >Massachusetts</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownNH" >New Hampshire</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownNJ" >New Jersey</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownNY" >New York</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownPA" >Pennslyvania</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownRI" >Rhode Island</a></li>
+          <li><a class='dropdown-trigger sub' href="#" data-target="dropdownVT" >Vermont</a></li>
+        </ul>
+    
+        <ul id='dropdownCT' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="colt">Coltsville</li>
+          <li class="dropdown-btn" id="wefa">Weir Farm</li>
+        </ul>
+    
+        <ul id='dropdownDE' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="frst">First State</li>
+        </ul>
+
+        <ul id='dropdownME' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="acad">Acadia</li>
+        </ul>
+        
+        <ul id='dropdownMD' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="fomc">Fort McHenry</li>
+          <li class="dropdown-btn" id="hamp">Hampton</li>
+          <li class="dropdown-btn" id="hart">Harriet Tubman</li>
+          <li class="dropdown-btn" id="hatu">Harriet Tubman Underground Railroad</li>
+          <li class="dropdown-btn" id="thst">Thomas Stone</li>
+        </ul>
+
+        <ul id='dropdownMA' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="adam">Adams</li>
+          <li class="dropdown-btn" id="bost">Boston</li>
+          <li class="dropdown-btn" id="boaf">Boston African American</li>
+          <li class="dropdown-btn" id="boha">Boston Harbor Islands</li>
+          <li class="dropdown-btn" id="caco">Cape Cod</li>
+          <li class="dropdown-btn" id="frla">Fredrick Law Olmsted</li>
+          <li class="dropdown-btn" id="jofi">John Fitzgerald Kennedy</li>
+          <li class="dropdown-btn" id="long">Longfellow House - Washington's Headquarters</li>
+          <li class="dropdown-btn" id="lowe">Lowell</li>
+          <li class="dropdown-btn" id="mima">Minute Man</li>
+          <li class="dropdown-btn" id="nebe">New Bedford Whaling</li>
+          <li class="dropdown-btn" id="sama">Salem Maritime</li>
+          <li class="dropdown-btn" id="sair">Saugus Iron Works</li>
+          <li class="dropdown-btn" id="spar">Springfield Armory</li>
+        </ul>
+
+        <ul id='dropdownNH' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="saga">Saint Gaudens</li>
+        </ul>
+
+        <ul id='dropdownNJ' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="dewa">Delaware Water Gap</li>
+          <li class="dropdown-btn" id="gate">Gateway</li>
+          <li class="dropdown-btn" id="greg">Great Egg Harbor</li>
+          <li class="dropdown-btn" id="morr">Morristown</li>
+          <li class="dropdown-btn" id="pagr">Paterson Great Falls</li>
+          <li class="dropdown-btn" id="stli">Statue of Liberty and Ellis Island</li>
+          <li class="dropdown-btn" id="edis">Thomas Edison</li>
+        </ul>
+
+        <ul id='dropdownNY' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="afbg">African Burial Ground</li>
+          <li class="dropdown-btn" id="cacl">Castle Clinton</li>
+          <li class="dropdown-btn" id="elro">Eleanor Roosevelt</li>
+          <li class="dropdown-btn" id="feha">Federal Hall</li>
+          <li class="dropdown-btn" id="fiis">Fire Island</li>
+          <li class="dropdown-btn" id="fost">Fort Stanwix</li>
+          <li class="dropdown-btn" id="gegr">General Grant</li>
+          <li class="dropdown-btn" id="gois">Governor's Island</li>
+          <li class="dropdown-btn" id="hagr">Hamilton Grange</li>
+          <li class="dropdown-btn" id="hofr">Home of Franklin D. Roosevelt</li>
+          <li class="dropdown-btn" id="mava">Martin Van Buren</li>
+          <li class="dropdown-btn" id="sahi">Sagamore Hill</li>
+          <li class="dropdown-btn" id="sapa">Saint Paul's Church</li>
+          <li class="dropdown-btn" id="sara">Saratoga</li>
+          <li class="dropdown-btn" id="ston">Stonewall</li>
+          <li class="dropdown-btn" id="thrb">Theodore Roosevelt Birthplace</li>
+          <li class="dropdown-btn" id="vama">Vanderbilt Mansion</li>
+          <li class="dropdown-btn" id="wori">Women's Rights Pioneers</li>
+        </ul>
+
+        <ul id='dropdownPA' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="alpo">Allegheny Portage Railroad</li>
+          <li class="dropdown-btn" id="appa">Appalachian Trail Conservancy</li>
+          <li class="dropdown-btn" id="edal">Edgar Allen Poe</li>
+          <li class="dropdown-btn" id="eise">Eisenhower</li>
+          <li class="dropdown-btn" id="flni">Flight 93</li>
+          <li class="dropdown-btn" id="fone">Fort Necessity</li>
+          <li class="dropdown-btn" id="frhi">Friendship Hill</li>
+          <li class="dropdown-btn" id="gett">Gettysburg</li>
+          <li class="dropdown-btn" id="hofu">Hopewell Furnace</li>
+          <li class="dropdown-btn" id="inde">Independence</li>
+          <li class="dropdown-btn" id="jofl">Johnstown Flood</li>
+          <li class="dropdown-btn" id="stea">Steamtown</li>
+          <li class="dropdown-btn" id="thko">Thaddeus Kosciuszko</li>
+          <li class="dropdown-btn" id="upde">Upper Delaware</li>
+          <li class="dropdown-btn" id="vafo">Valley Forge</li>
+        </ul>
+
+        <ul id='dropdownRI' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="blrv">Blackstone River Valler</li>
+          <li class="dropdown-btn" id="rowi">Roger Williams</li>
+        </ul>
+
+        <ul id='dropdownVT' class='dropdown-content dropdown-nested'>
+          <li class="dropdown-btn" id="mabi">Marsh Billings Rockefeller</li>
+        </ul>
+
+        <!-- <a class='dropdown-button btn' href='#' data-target='dropdown1'>Nested DropDown</a>
+
+        <ul id='dropdown1' class='dropdown-content dropdown-nested'>
+          <li><a class='dropdown-button btn' href='#' data-target='dropdown2'> New Jersey</a></li>
+          <li><a class='dropdown-button btn' href='#' data-target='dropdown2' data-hover="hover" data-alignment="left">one<span class="right-triangle">&#9656;</span></a></li>
+          <li class="dropdown-btn" id="acad">Acadia</li>
+          <li class="dropdown-btn" id="arch">Arches</li>
+          <li class="dropdown-btn" id="dena">Denali</li>
+          <li class="dropdown-btn" id="ever">Everglade</li>
+          <li class="dropdown-btn" id="glac">Glacier</li>
+          <li class="dropdown-btn" id="glca">Grand Canyon</li>
+          <li class="dropdown-btn" id="romo">Rocky Mountain</li>
+          <li class="dropdown-btn" id="redw">Redwood</li>
+          <li class="dropdown-btn" id="seki">Sequioa</li>
+          <li class="dropdown-btn" id="yell">Yellowstone</li>
+          <li class="dropdown-btn" id="yose">Yosemite</li>
+        </ul>
+
+        <ul id='dropdown2' class='dropdown-content dropdown-nested'>
+          <li><a href="#!">one</a></li>
+          <li><a class='dropdown-button' href="#" data-target="dropdown3" data-hover="hover" data-alignment="left">two<span class="right-triangle">&#9656;</span></a></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+
+        <ul id='dropdown3' class='dropdown-content dropdown-nested'>
+          <li><a href="#!">three</a></li>
+          <li><a href="#!">four</a></li>
+          <li><a href="#!">five</a></li>
+          <li><a href="#!">six</a></li>
+        </ul> -->
+
+        <!-- <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdownParks'>Choose a Park!</a>
+
         <ul id='dropdownParks' class='dropdown-content'>
           <li class="dropdown-btn" id="acad">Acadia</li>
           <li class="dropdown-btn" id="arch">Arches</li>
@@ -184,16 +332,11 @@
           <li class="dropdown-btn" id="seki">Sequioa</li>
           <li class="dropdown-btn" id="yell">Yellowstone</li>
           <li class="dropdown-btn" id="yose">Yosemite</li>
-
-          <!-- <li class="divider"></li>
-          <li>
-            <a id="parksDropdown" class='dropdown-trigger btn' href='#' data-target='dropdown'>Choose a Park!</a>
-            <a class='dropdown-button2' href='#' data-activates='dropdown2'>New Jersey></a>
-          </li>
+          <li><a id="parksDropdown1" class='dropdown-trigger btn' href='#' data-target='dropdownNJ'>New Jersey</a></li>
         </ul>
-        <ul id='dropdown2' class='dropdown-content'>
-          <li><a href="#!">one</a></li>
-          <li><a href="#!">two</a></li>
+        <ul id='dropdownNJ' class='dropdown-content'>
+          <li class="dropdown-btn renderBtn" id="acad">Acadia</li>
+          <li class="dropdown-btn renderBtn" id="arch">Arches</li>
         </ul> -->
 
         <!-- <li id="glac"><a href="#!"><i class="material-icons">view_module</i>four</a></li>
@@ -201,6 +344,7 @@
         <!-- </ul> -->
       </div>
       <div id="history-spot"></div>
+      <div id="park-name"></div>
     </section>
 
     <!-- PARK INFO SECTION -->
