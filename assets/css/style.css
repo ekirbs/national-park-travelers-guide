@@ -42,7 +42,7 @@ header h1 {
 
 header img {
   margin-right: 20px;
-  height: 5px;
+  height: 75px;
   width: auto;
   border: 2px solid var(--white);
 }
