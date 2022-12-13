@@ -375,7 +375,7 @@ a:hover {
       grid-template-rows: 33% 75% 33%;
     } */
 
-  .section-label h2 {
+  .section-label h3 {
     writing-mode: vertical-lr;
     text-orientation: upright;
     font-size: 80%;
@@ -396,9 +396,9 @@ a:hover {
     font-size: 80%;
   }
 
-  .img-text h3,
+  .img-text h4,
   .img-text p {
-    font-size: 80%;
+    font-size: 50%;
   }
 }
 
