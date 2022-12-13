@@ -29,10 +29,11 @@ Once a park is chosen, information about the park will be displayed below, inclu
 
 ## Credits
 
-Link: [Eric Kirberger github](https://ekirbs.github.io/national-park-travelers-guide/ 'The github page for Eric Kirberger.')
-Link: [Kendra github](https://github.com/kendrameda 'The github page for Kendra.')
-Link: [Ruochen Liu](https://github.com/mason66xue 'The github page for Ruochen Liu.')
-Link: [David Yu](https://github.com/Dyu4848/ 'The github page for David Yu.')
+- Link: [Eric Kirberger](https://ekirbs.github.io/national-park-travelers-guide/ 'The github page for Eric Kirberger.')
+- Link: [Kendra](https://github.com/kendrameda 'The github page for Kendra.')
+- Link: [Ruochen Liu](https://github.com/mason66xue 'The github page for Ruochen Liu.')
+- Link: [David Yu](https://github.com/Dyu4848/ 'The github page for David Yu.')
+
 ## License
 
 N/A
