@@ -27,6 +27,7 @@ $(function () {
   });
 });
 
+// SLIDESHOW FUNCTION (NEEDS WORK)
 // var images = data.data[0].images;
 
 // var imagesLength = images.length;
@@ -71,19 +72,15 @@ function displayChosenPark() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
 
       lat = data.data[0].latitude.valueOf();
       lon = data.data[0].longitude.valueOf();
-      console.log(lat, lon);
 
       var activities = data.data[0].activities;
-      console.log(activities);
 
       var fullName = data.data[0].fullName;
       $("#park-name").append(`<h2>${fullName}</h2>`);
       var url = data.data[0].url;
-      console.log(url);
       $("#park-name").append(`<a href="${url}">${url}</a>`);
 
       for (var i = 0; i < activities.length; i++) {
@@ -94,70 +91,31 @@ function displayChosenPark() {
       $("#park-weather-card").append(weatherReport);
 
       var description = data.data[0].description;
-      console.log(description);
 
       var streetName = data.data[0].addresses[0].line1;
       var city = data.data[0].addresses[0].city;
       var zip = data.data[0].addresses[0].postalCode;
       var state = data.data[0].addresses[0].stateCode;
-      console.log(streetName + " " + city + " ," + zip + " ," + state);
 
       var directions = data.data[0].directionsInfo;
 
       var directionsUrl = data.data[0].directionsUrl;
-      console.log(directionsUrl);
 
       var hours = data.data[0].operatingHours[0].standardHours;
-      console.log(hours);
 
-      $("#park-description-card").append(
-        "<br/>" + "Park Description" + "<br/>" + description + "<br/>"
-      );
-      $("#park-directions-card").append(
-        "<br/>" +
-          "Park Address" +
-          "<br/>" +
-          streetName +
-          " " +
-          city +
-          " ," +
-          zip +
-          " ," +
-          state +
-          "<br/>"
-      );
-      $("#park-directions-card").append(
-        "<br/>" + "Park Direction" + "<br/>" + directions + "<br/>"
-      );
-      $("#contact-park").append(
-        "<br/>" + "Park Direction URL" + "<br/>" + directionsUrl + "<br/>"
-      );
+      $("#park-description-card").append("<br/>" + "Park Description" + "<br/>" + description + "<br/>");
+      $("#park-directions-card").append("<br/>" + "Park Address" + "<br/>" + streetName + " " + city + " ," + zip + " ," + state + "<br/>");
+      $("#park-directions-card").append("<br/>" + "Park Direction" + "<br/>" + directions + "<br/>");
+      $("#contact-park").append("<br/>" + "Park Direction URL" + "<br/>" + directionsUrl + "<br/>");
 
-      $("#park-hours-card").append(
-        "<br/>" +
-          "Park Hours" +
-          "<br/>" +
-          "Sunday: " +
-          hours.sunday +
-          "<br/>" +
-          "Monday: " +
-          hours.monday +
-          "<br/>" +
-          "Tuesday: " +
-          hours.tuesday +
-          "<br/>" +
-          "Wednesday: " +
-          hours.wednesday +
-          "<br/>" +
-          "Thursday: " +
-          hours.thursday +
-          "<br/>" +
-          "Friday: " +
-          hours.friday +
-          "<br/>" +
-          "Saturday: " +
-          hours.saturday +
-          "<br/>"
+      $("#park-hours-card").append("<br/>" + "Park Hours" + "<br/>" + 
+        "Sunday: " + hours.sunday + "<br/>" + 
+        "Monday: " + hours.monday + "<br/>" + 
+        "Tuesday: " + hours.tuesday + "<br/>" +
+        "Wednesday: " + hours.wednesday + "<br/>" + 
+        "Thursday: " + hours.thursday + "<br/>" +
+        "Friday: " + hours.friday + "<br/>" +
+        "Saturday: " + hours.saturday + "<br/>"
       );
 
       displayChosenCity();
@@ -169,7 +127,6 @@ function displayChosenCity() {
   $("#feature-spot").empty();
 
   $("#weather").empty();
-  console.log(lat, lon);
 
   var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=${units}&lang=${lang}`;
 
@@ -187,9 +144,7 @@ function displayChosenCity() {
       var dateDisplay = $("<h2>").text(dayjs().format("M/D/YYYY"));
       featureCard.append(dateDisplay);
 
-      var featureImg = $(
-        `<img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png" id="icon">`
-      );
+      var featureImg = $(`<img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png" id="icon">`);
       featureCard.append(featureImg);
 
       var featureBody = $('<div class="card-body">');
@@ -200,15 +155,11 @@ function displayChosenCity() {
       featureBody.append(tempDisplay);
 
       var windSpeed = data.list[0].wind.speed;
-      var windDisplay = $('<p class="card-text">').text(
-        `Wind Speed: ${windSpeed}`
-      );
+      var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);
       featureBody.append(windDisplay);
 
       var humidity = data.list[0].main.humidity;
-      var humidDisplay = $('<p class="card-text">').text(
-        `Humidity: ${humidity}`
-      );
+      var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);
       featureBody.append(humidDisplay);
 
       $("#weather").prepend(featureCard);
@@ -217,45 +168,29 @@ function displayChosenCity() {
         var day = i * 8;
         var count = i;
 
-        var weatherArticle = $(
-          `<div id="article${count}" class="card card-alt zoom">`
-        );
+        var weatherArticle = $(`<div id="article${count}" class="card card-alt zoom">`);
 
         $("#weather").append(weatherArticle);
 
-        var dateDisplay = $("<h3>").text(
-          dayjs()
-            .add(i + 1, "day")
-            .format("M/D/YYYY")
-        );
+        var dateDisplay = $("<h3>").text(dayjs().add(i + 1, "day").format("M/D/YYYY"));
         $(`#article${count}`).append(dateDisplay);
 
-        var weatherImg = $(
-          `<img src="http://openweathermap.org/img/w/${
-            data.list[day + 1].weather[0].icon
-          }.png" id="icon">`
-        );
+        var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`);
         $(`#article${count}`).append(weatherImg);
 
         var weatherBody = $(`<div id="weatherBody${count}" class="card-body">`);
         $(`#article${count}`).append(weatherBody);
 
         var temperature = data.list[day + 1].main.temp;
-        var tempDisplay = $('<p class="card-text">').text(
-          `Temp: ${temperature}`
-        );
+        var tempDisplay = $('<p class="card-text">').text(`Temp: ${temperature}`);
         $(`#weatherBody${count}`).append(tempDisplay);
 
         var windSpeed = data.list[day + 1].wind.speed;
-        var windDisplay = $('<p class="card-text">').text(
-          `Wind Speed: ${windSpeed}`
-        );
+        var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);
         $(`#weatherBody${count}`).append(windDisplay);
 
         var humidity = data.list[day + 1].main.humidity;
-        var humidDisplay = $('<p class="card-text">').text(
-          `Humidity: ${humidity}`
-        );
+        var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);
         $(`#weatherBody${count}`).append(humidDisplay);
       }
     });
@@ -298,19 +233,14 @@ $(".dropdown-btn").on("click", function (event) {
   var cities = getLocalNameStorage();
 
   park = event.target.id;
-  console.log(park);
-
-  console.log(cities);
 
   var city = event.target.innerHTML;
-  console.log(city);
 
   if (cities.includes(city)) {
     console.log("already chosen");
   } else {
     cities.push(city);
     code.push(park);
-    console.log(cities, park);
 
     if (cities.length > 5) {
       cities.shift();
@@ -331,7 +261,6 @@ $(document).on("click", ".hist-btn", function (event) {
   event.preventDefault();
 
   park = $(this).attr("data-code");
-  console.log(park);
 
   displayChosenPark();
 });
