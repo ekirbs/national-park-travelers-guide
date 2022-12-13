@@ -235,7 +235,7 @@ body {
   .main-content {
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 11% 22% 99% 33% 22%;
+    grid-template-rows: 11% 28% 99% 33% 22%;
     grid-gap: 1em;
     margin: 1em;
   }
@@ -421,11 +421,3 @@ body {
         padding: 200px 100px;
         border-radius: 8px;
     };
-
-    /* .sub {
-      display: none;
-    }
-
-    .sub:hover {
-      overflow-y: visible;
-    } */
