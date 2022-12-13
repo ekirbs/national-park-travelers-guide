@@ -242,7 +242,7 @@ header img {
 .main-content {
   display: grid;
   grid-template-columns: 20% 80%;
-  grid-template-rows: 11% 28% 88% 66% 33% 22%;
+  grid-template-rows: 11% 28% 88% 55% 33% 15%;
   grid-gap: 1em;
   margin: 1em;
 }
