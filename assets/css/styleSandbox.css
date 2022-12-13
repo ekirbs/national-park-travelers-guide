@@ -478,17 +478,14 @@ a:hover {
   }; */
 
 /* || PARK DROPDOWN MENU */
+#dropdown-base li:hover {
+  overflow-y: visible;
+}
+
 /* .dropdown-nested:hover {
   overflow-y: visible;
   overflow-x: visible;
 } */
-/* #dropdown-base li {
-  display: none;
-} */
-
-#dropdown-base li:hover {
-  overflow-y: visible;
-}
 
 .dropdown-content .dropdown-content {
   /* left: 100%; */
