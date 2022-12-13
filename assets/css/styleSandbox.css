@@ -364,7 +364,7 @@ a:hover {
 
 #weather,
 .feature-card {
-  width: 100%;
+  width: 0;
   height: 0;
   margin: 2px;
   min-width: 100%;
