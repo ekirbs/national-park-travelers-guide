@@ -268,13 +268,9 @@ header img {
 }
 
 /* || PARK CHOICE SECTION */
-#about-site {
-  display: block;
-  align-items: center;
-}
-
 #choose-park-main-button {
   background-color: red;
+  margin-bottom: 1em;
 }
 
 .hist-btn {
