@@ -267,6 +267,20 @@ header img {
   text-decoration: underline var(--yellow-highlight);
 }
 
+/* || PARK CHOICE SECTION */
+#about-site {
+  display: block;
+  align-items: center;
+}
+
+#choose-park-main-button {
+  background-color: red;
+}
+
+.hist-btn {
+  background-color: var(--dark-background);
+}
+
 /* || PARK INFO SECTION */
 #park-weather-card,
 #activity-card,

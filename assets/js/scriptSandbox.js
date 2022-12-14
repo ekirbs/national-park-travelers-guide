@@ -78,7 +78,7 @@ function displayChosenPark() {
       var activities = data.data[0].activities;
 
       var fullName = data.data[0].fullName;
-      $("#park-name").append(`<h2>${fullName}</h2>`);
+      $("#park-name").append(`<h3 style="text-decoration: underline">${fullName}</h3>`);
       var url = data.data[0].url;
       $("#park-name").append(`<a href="${url}">${url}</a>`);
 
@@ -123,9 +123,16 @@ function displayChosenPark() {
 
 // WEATHER DISPLAY FROM HISTORY FUNCTION
 function displayChosenCity() {
+
   $("#feature-spot").empty();
 
   $("#weather").empty();
+
+  $('#weather-day-0').empty();
+  $('#weather-day-1').empty();
+  $('#weather-day-2').empty();
+  $('#weather-day-3').empty();
+  $('#weather-day-4').empty();
 
   var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=${units}&lang=${lang}`;
 
