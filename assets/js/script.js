@@ -6,7 +6,6 @@ var lang = "en";
 var lat;
 var lon;
 var park;
-var btnSource = 1;
 
 // TIME & SEARCH HISTORY DISPLAY FUNCTION ON PAGE LOAD
 function init() {
@@ -79,31 +78,31 @@ function displayChosenPark() {
       var activities = data.data[0].activities;
 
       var fullName = data.data[0].fullName;
-      $("#park-name").append(`<h2>${fullName}</h2>`);
+      $("#park-name").append(`<h3 style="text-decoration: underline">${fullName}</h3>`);
       var url = data.data[0].url;
       $("#park-name").append(`<a href="${url}">${url}</a>`);
 
       for (var i = 0; i < activities.length; i++) {
         $("#activity-card").append(data.data[0].activities[i].name + "<br/>");
       }
-
-      var weatherReport = data.data[0].weatherInfo;
-      $("#park-weather-card").append(weatherReport);
-
+      
       var description = data.data[0].description;
 
+      var weatherReport = data.data[0].weatherInfo;
+      
       var streetName = data.data[0].addresses[0].line1;
       var city = data.data[0].addresses[0].city;
       var zip = data.data[0].addresses[0].postalCode;
       var state = data.data[0].addresses[0].stateCode;
-
+      
       var directions = data.data[0].directionsInfo;
-
+      
       var directionsUrl = data.data[0].directionsUrl;
-
+      
       var hours = data.data[0].operatingHours[0].standardHours;
-
+      
       $("#park-description-card").append("<br/>" + "Park Description" + "<br/>" + description + "<br/>");
+      $("#park-weather-card").append(weatherReport);
       $("#park-directions-card").append("<br/>" + "Park Address" + "<br/>" + streetName + " " + city + " ," + zip + " ," + state + "<br/>");
       $("#park-directions-card").append("<br/>" + "Park Direction" + "<br/>" + directions + "<br/>");
       $("#contact-park").append("<br/>" + "Park Direction URL" + "<br/>" + directionsUrl + "<br/>");
@@ -120,13 +119,20 @@ function displayChosenPark() {
 
       displayChosenCity();
     });
-}
+};
 
 // WEATHER DISPLAY FROM HISTORY FUNCTION
 function displayChosenCity() {
+
   $("#feature-spot").empty();
 
   $("#weather").empty();
+
+  $('#weather-day-0').empty();
+  $('#weather-day-1').empty();
+  $('#weather-day-2').empty();
+  $('#weather-day-3').empty();
+  $('#weather-day-4').empty();
 
   var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=${units}&lang=${lang}`;
 
@@ -138,10 +144,10 @@ function displayChosenCity() {
       var featureCard = $("<div class='card feature-card zoom'>");
 
       var name = data.city.name;
-      var city = $("<h2>").text(name);
+      var city = $("<h4>").text(name);
       featureCard.append(city);
 
-      var dateDisplay = $("<h2>").text(dayjs().format("M/D/YYYY"));
+      var dateDisplay = $("<h4>").text(dayjs().format("M/D/YYYY"));
       featureCard.append(dateDisplay);
 
       var featureImg = $(`<img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png" id="icon">`);
@@ -168,17 +174,17 @@ function displayChosenCity() {
         var day = i * 8;
         var count = i;
 
-        var weatherArticle = $(`<div id="article${count}" class="card card-alt zoom">`);
+        var weatherArticle = $(`<div id="article${count}" class="card card-alt-weather zoom">`);
 
-        $("#weather").append(weatherArticle);
+        $(`#weather-day-${count}`).append(weatherArticle);
 
-        var dateDisplay = $("<h3>").text(dayjs().add(i + 1, "day").format("M/D/YYYY"));
+        var dateDisplay = $("<h5>").text(dayjs().add(i + 1, "day").format("M/D/YYYY"));
         $(`#article${count}`).append(dateDisplay);
 
         var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`);
         $(`#article${count}`).append(weatherImg);
 
-        var weatherBody = $(`<div id="weatherBody${count}" class="card-body">`);
+        var weatherBody = $(`<div id="weatherBody${count}" class="weather-card-body">`);
         $(`#article${count}`).append(weatherBody);
 
         var temperature = data.list[day + 1].main.temp;

@@ -165,7 +165,7 @@
         </p>
       </section>
 
-      <!-- ABOUT PARK SECTION -->
+      <!-- PARK CHOICE SECTION -->
       <section class="section-label about-site-header">
         <h3>Choose a Park</h3>
       </section>
@@ -173,7 +173,7 @@
       <section id="about-site" class="about-site-section">
         <div class="col s4">
           <!-- Dropdown Structure -->
-          <a class="dropdown-trigger btn" href="#" data-target="dropdownBase">Menu</a>
+          <a id="choose-park-main-button" class="dropdown-trigger btn" href="#" data-target="dropdownBase">Press this button to choose a National Park!</a>
 
           <ul id="dropdownBase" class="dropdown-content dropdown-nested">
             <li>
@@ -211,20 +211,20 @@
             </li>
           </ul>
 
-          <ul id="dropdownCT" class="dropdown-content dropdown-nested">
+          <ul id="dropdownCT" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="colt">Coltsville</li>
             <li class="dropdown-btn" id="wefa">Weir Farm</li>
           </ul>
 
-          <ul id="dropdownDE" class="dropdown-content dropdown-nested">
+          <ul id="dropdownDE" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="frst">First State</li>
           </ul>
 
-          <ul id="dropdownME" class="dropdown-content dropdown-nested">
+          <ul id="dropdownME" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="acad">Acadia</li>
           </ul>
 
-          <ul id="dropdownMD" class="dropdown-content dropdown-nested">
+          <ul id="dropdownMD" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="fomc">Fort McHenry</li>
             <li class="dropdown-btn" id="hamp">Hampton</li>
             <li class="dropdown-btn" id="hart">Harriet Tubman</li>
@@ -232,7 +232,7 @@
             <li class="dropdown-btn" id="thst">Thomas Stone</li>
           </ul>
 
-          <ul id="dropdownMA" class="dropdown-content dropdown-nested">
+          <ul id="dropdownMA" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="adam">Adams</li>
             <li class="dropdown-btn" id="bost">Boston</li>
             <li class="dropdown-btn" id="boaf">Boston African American</li>
@@ -249,11 +249,11 @@
             <li class="dropdown-btn" id="spar">Springfield Armory</li>
           </ul>
 
-          <ul id="dropdownNH" class="dropdown-content dropdown-nested">
+          <ul id="dropdownNH" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="saga">Saint Gaudens</li>
           </ul>
 
-          <ul id="dropdownNJ" class="dropdown-content dropdown-nested">
+          <ul id="dropdownNJ" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="dewa">Delaware Water Gap</li>
             <li class="dropdown-btn" id="gate">Gateway</li>
             <li class="dropdown-btn" id="greg">Great Egg Harbor</li>
@@ -263,7 +263,7 @@
             <li class="dropdown-btn" id="edis">Thomas Edison</li>
           </ul>
 
-          <ul id="dropdownNY" class="dropdown-content dropdown-nested">
+          <ul id="dropdownNY" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="afbg">African Burial Ground</li>
             <li class="dropdown-btn" id="cacl">Castle Clinton</li>
             <li class="dropdown-btn" id="elro">Eleanor Roosevelt</li>
@@ -284,7 +284,7 @@
             <li class="dropdown-btn" id="wori">Women's Rights Pioneers</li>
           </ul>
 
-          <ul id="dropdownPA" class="dropdown-content dropdown-nested">
+          <ul id="dropdownPA" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="alpo">Allegheny Portage Railroad</li>
             <li class="dropdown-btn" id="appa">Appalachian Trail Conservancy</li>
             <li class="dropdown-btn" id="edal">Edgar Allen Poe</li>
@@ -302,12 +302,12 @@
             <li class="dropdown-btn" id="vafo">Valley Forge</li>
           </ul>
 
-          <ul id="dropdownRI" class="dropdown-content dropdown-nested">
+          <ul id="dropdownRI" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="blrv">Blackstone River Valler</li>
             <li class="dropdown-btn" id="rowi">Roger Williams</li>
           </ul>
 
-          <ul id="dropdownVT" class="dropdown-content dropdown-nested">
+          <ul id="dropdownVT" class="dropdown-content dropdown-nested-sub">
             <li class="dropdown-btn" id="mabi">Marsh Billings Rockefeller</li>
           </ul>
         </div>
@@ -363,15 +363,59 @@
         </article>
       </section>
 
-      <!-- WEATHER FORECAST SECTION -->
-      <section class="section-label weather-forecast-header">
+      <!-- WEATHER SECTION -->
+      <section id="weather-forecast-header" class="section-label">
         <h3>Weather Forecast</h3>
       </section>
 
       <section id="daily-weather" class="daily-section">
-        <div class="container col s8">
+        <article class="card card-main-weather zoom">
           <div id="weather"></div>
-        </div>
+          <div class="img-text">
+            <h4>Current Weather</h4>
+            <p>the weather today!</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-0"></div>
+          <div class="weather-img-text">
+            <h5>Day 2</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-1"></div>
+          <div class="weather-img-text">
+            <h5>Day 3</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-2"></div>
+          <div class="weather-img-text">
+            <h5>Day 4</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-3"></div>
+          <div class="weather-img-text">
+            <h5>Day 5</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-4"></div>
+          <div class="weather-img-text">
+            <h5>Day 6</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
       </section>
 
       <!-- CONTACT PARK SECTION -->
