@@ -71,7 +71,6 @@ function displayChosenPark() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
 
       lat = data.data[0].latitude.valueOf();
       lon = data.data[0].longitude.valueOf();
@@ -79,7 +78,7 @@ function displayChosenPark() {
       var activities = data.data[0].activities;
 
       var fullName = data.data[0].fullName;
-      $("#park-name").append(`<h2>${fullName}</h2>`);
+      $("#park-name").append(`<h3 style="text-decoration: underline">${fullName}</h3>`);
       var url = data.data[0].url;
       $("#park-name").append(`<a href="${url}">${url}</a>`);
 
@@ -124,9 +123,16 @@ function displayChosenPark() {
 
 // WEATHER DISPLAY FROM HISTORY FUNCTION
 function displayChosenCity() {
+
   $("#feature-spot").empty();
 
   $("#weather").empty();
+
+  $('#weather-day-0').empty();
+  $('#weather-day-1').empty();
+  $('#weather-day-2').empty();
+  $('#weather-day-3').empty();
+  $('#weather-day-4').empty();
 
   var weatherApiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=${units}&lang=${lang}`;
 
@@ -168,9 +174,9 @@ function displayChosenCity() {
         var day = i * 8;
         var count = i;
 
-        var weatherArticle = $(`<div id="article${count}" class="card card-alt zoom">`);
+        var weatherArticle = $(`<div id="article${count}" class="card card-alt-weather zoom">`);
 
-        $("#weather").append(weatherArticle);
+        $(`#weather-day-${count}`).append(weatherArticle);
 
         var dateDisplay = $("<h5>").text(dayjs().add(i + 1, "day").format("M/D/YYYY"));
         $(`#article${count}`).append(dateDisplay);
@@ -178,7 +184,7 @@ function displayChosenCity() {
         var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`);
         $(`#article${count}`).append(weatherImg);
 
-        var weatherBody = $(`<div id="weatherBody${count}" class="card-body">`);
+        var weatherBody = $(`<div id="weatherBody${count}" class="weather-card-body">`);
         $(`#article${count}`).append(weatherBody);
 
         var temperature = data.list[day + 1].main.temp;

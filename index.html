@@ -165,7 +165,7 @@
         </p>
       </section>
 
-      <!-- ABOUT PARK SECTION -->
+      <!-- PARK CHOICE SECTION -->
       <section class="section-label about-site-header">
         <h3>Choose a Park</h3>
       </section>
@@ -173,7 +173,7 @@
       <section id="about-site" class="about-site-section">
         <div class="col s4">
           <!-- Dropdown Structure -->
-          <a class="dropdown-trigger btn" href="#" data-target="dropdownBase">Menu</a>
+          <a id="choose-park-main-button" class="dropdown-trigger btn" href="#" data-target="dropdownBase">Press this button to choose a National Park!</a>
 
           <ul id="dropdownBase" class="dropdown-content dropdown-nested">
             <li>
@@ -363,15 +363,59 @@
         </article>
       </section>
 
-      <!-- WEATHER FORECAST SECTION -->
-      <section class="section-label weather-forecast-header">
+      <!-- WEATHER SECTION -->
+      <section id="weather-forecast-header" class="section-label">
         <h3>Weather Forecast</h3>
       </section>
 
       <section id="daily-weather" class="daily-section">
-        <div class="container col s8">
+        <article class="card card-main-weather zoom">
           <div id="weather"></div>
-        </div>
+          <div class="img-text">
+            <h4>Current Weather</h4>
+            <p>the weather today!</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-0"></div>
+          <div class="weather-img-text">
+            <h5>Day 2</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-1"></div>
+          <div class="weather-img-text">
+            <h5>Day 3</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-2"></div>
+          <div class="weather-img-text">
+            <h5>Day 4</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-3"></div>
+          <div class="weather-img-text">
+            <h5>Day 5</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
+
+        <article class="card card-alt-weather zoom">
+          <div id="weather-day-4"></div>
+          <div class="weather-img-text">
+            <h5>Day 6</h5>
+            <p>next 5 days forecast</p>
+          </div>
+        </article>
       </section>
 
       <!-- CONTACT PARK SECTION -->
